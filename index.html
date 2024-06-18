@@ -1,256 +1,524 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - FBootstrapping Proyecto</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Weeding</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<html lang="en">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
-  <head>
-      <meta charset="UTF-8" />
-      <meta name ="viewport" content="width = device-width, initial-scale = 1" >
-      <title>Bootcamp / CV</title>
-      <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans" />
-      <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
-          crossorigin="anonymous" />
-      <!-- <link rel="stylesheet" href="style.css" /> -->
-      <link rel="shortcut icon" href="./favicon.ico">
-  </head>
+    <!-- header-->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a href="story.html">Our Story</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/ header-->
 
-<body> 
-    <div class="background gradient">
-      <!-- Delete if animation
-        <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-      -->
+    <!-- slider_area -->
+    <div class="slider_area ">
+        <div class="slider_area_inner slider_bg_1 overlay2">
+            <div class="slider_text text-center">
+                <div class="text_inner">
+                    <img src="img/banner/ornaments.png" alt="">
+                    <h4>04 Aug 2024</h4>
+                    <h3>Dong Hung & Tu Trinh<br>
+                        Wedding Ceremony</h3>
+                    <span>Get Married</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="page">
-        <header>
-            <nav>
-                <a href="#about" class="selected" id='getAbout'>
-                    <span class="fas fa-user"></span>
-                    <span class="link">About</span>
-                </a>
-                <a href="#resume" id='getResume'>
-                    <span class="fas fa-file"></span>
-                    <span class="link">Resume</span>
-                </a>
-                <a href="#contact" id='getContact'>
-                    <span class="fas fa-at"></span>
-                    <span class="link">Contact</span>
-                </a>
-            </nav>
-        </header>
-        <main>
-            <section id="presentation" class="profile">
-                <div class="profile-background"></div>
-                <div>
-                    <div class="profile-image">
-                        <img src="images/avatar.jpg"  alt="Hung Nguyen">
-                    </div>
-                    <h1 class="profile-name" id="nombre">Hung D Nguyen</h1>
-                    <h2 class="profile-profession">Java Software Engineer</h2>
-                    <div class="profile-social" id="profile-social">
-                        <a href="https://www.linkedin.com/in/hungnguyend/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/hnguyen283" class="fab fa-github"></a>
+    <!--/ slider_area -->
+
+    <!-- wedding_countdown -->
+    <div class="weeding_countdown_area">
+        <div class="flowaers_top d-none d-lg-block">
+            <img src="img/banner/flower-top.png" alt="">
+        </div>
+        <div class="flowaers_bottom d-none d-lg-block">
+                <img src="img/banner/flower-bottom.png" alt="">
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center">
+                        <img src="img/banner/flowers.png" alt="">
+                        <span>04. Aug. 2024</span>
+                        <h3>THE. WEDDING. Countdown</h3>
                     </div>
                 </div>
-                <div class="profile-buttons">
-                    <a href="https://www.linkedin.com/ambry/?x-li-ambry-ep=AQKN8GDCcMrcsQAAAZApsP06W5CIaVs7PW7Zw2GjdujwAseT-_uLC9BYRiZeJ_c65nZCfS5e3RUfNnYhe42zSidhadfzxSnxJd1cxMxBugKSpti8zNc8uRZ3hzO8fxtYE41Gd7zY_tD6_H-AarTkkLNT3UHl7cnc0k5njYRsQZxzoO6C7_bHrmA6D192k1o_ha7H5NGPaaem8whv16rQ7EtZNlsujNfmPRooKbgp0yzzKKCPda8lueHQroyLe9a2SXjjQgXVwvs_Fo7-EymKWIdt3bd3gWKFt8-Ss_UDMT_PfH3_UW3uee-wmmCydAgfqT9Fssa3waEr2jtfNcc3tYW9_EGag2756dvs2K0Iuc0C0cL14TQe7CV0GAYpAr_wu8v62nJcx-GPRhowme5CvAx8iFAYrfEnS3VeK1LfTa10ldicgQZRc2t5xJbLtWSRkKduX6Ua_70DeC24xddac8rraXFEwPbX0JDBgz8jqvJ1mcBQmOy7brPyl6OEW7CbKgrUC_LeWck5d_tsWNledOr_R7BekqzVr38P676DJqy-NFA3Oxhedc7zFHgh4ubxwoVvDA&x-ambry-um-filename=Profile.pdf" download>DOWNLOAD CV <i class="fas fa-download"></i></a>
-                    <a href="https://www.linkedin.com/in/hungnguyend/">CONTACT ME <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div id="clock" class="countdown_area counter_bg ">
+                    </div>
                 </div>
-            </section>
-            <section id="about" class="about view">
-                <article class="about-aboutMe">
-                    <h3 class="title">About Me</h3>
-                    <div class="line-left">
-                        <p>As an experienced technical lead proficient in Java, Microservices, OOP, MVC, and cloud platforms like AWS and MS Azure.</p>
-                        <p>I have a proven track record of leading cross-functional teams to deliver innovative solutions. With strong Java skills, I tackle complex coding challenges and architect scalable systems.</p> 
-                        <p>As a passionate leader, I empower teams to excel and foster a culture of continuous learning.</p>
-                        <p>I am excited to bring my technical leadership skills to your organization and contribute to its success.</p>
-                        <div>
-                            <div>
-                                <span>BORN . . . . </span>1994
-                            </div>
-                            <div>
-                                <span>RESIDENCE . . . . </span>Vietnam
-                            </div>
-                            <div>
-                                <span>ADDRESS . . . . </span>HCMC, Vietnam
+            </div>
+        </div>
+    </div>
+    <!--/ wedding_countdown -->
+
+    <!-- our_love-story -->
+    <div class="love_story_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center">
+                        <img src="img/banner/flowers.png" alt="">
+                        <h3>Our. Love. Story</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_lover_story text-center">
+                        <div class="story_thumb">
+                            <img src="img/story/1.png" alt="">
+                        </div>
+                        <span>Groom</span>
+                        <h3>Hung Nguyen</h3>
+                        <p>Hung, the Software Engineer and investor, wears two hats: one of code and algorithms, the other of financial foresight. Yet, it’s in the quiet church where he finds solace and love. There, amidst flickering candlelight, he glimpses Trinh, her grace like morning dew. Together, they write their story—a symphony of faith and devotion. 🌟❤️.</p>
+                        <div class="social_links">
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="weding_time_line text-center">
+                        <div class="single_time_line">
+                            <h3>Meet</h3>
+                            <p>In the bustling streets of Ho Chi Minh City, two hearts found solace amidst the chaos. Their names were Hung and Trinh, both devoted to their roles as GLV at the local church. Their shared passion for helping others brought them together.                                .</p>
+                        </div>
+                        <div class="single_time_line">
+                            <h3>He Proposed</h3>
+                            <p>One rainy season, Hung mustered the courage to speak his heart. Raindrops fell around them, creating a soft symphony as he confessed, “Trinh, I’ve cherished every moment we’ve spent together. Life feels incomplete without you by my side.”
+                                Trinh’s eyes sparkled with unshed tears. She had felt the same way but feared risking their friendship. Yet, in that vulnerable moment, she realized that love was worth the leap. “Hung,” she whispered, “I’ve been waiting for you to say that.”
+                                And so, under the gray sky, amidst the pitter-patter of raindrops, Hung knelt and held out a simple ring—a promise of forever. Trinh’s heart swelled as she said yes, sealing their fate. From that day on, their love story unfolded like the pages of a cherished book..</p>
+                        </div>
+                        <div class="single_time_line">
+                            <h3>Love Story</h3>
+                            <p>As seasons changed, so did their love. They weathered storms—both literal and metaphorical—holding hands through life’s uncertainties. Their love story became a beacon of hope for others. Children at the church would giggle, “When will Uncle Hung and Aunt Trinh get married?” Their laughter echoed through the halls, a testament to the enduring love that bloomed within those sacred walls.
+                                And so, in the quiet corners of the church, where sunlight filtered through stained glass, their love story continued—a beautiful tapestry woven with threads of faith, kindness, and unwavering devotion. Together, they wrote their own happily ever after, one shared memory at a time.</p>
+                        </div>
+                        <div class="single_time_line">
+                            <h3>Wedding Day</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single_lover_story text-center">
+                        <div class="story_thumb">
+                            <img src="img/story/2.png" alt="">
+                        </div>
+                        <span>Bride</span>
+                        <h3>Tu Trinh</h3>
+                        <p>In the bustling world of trade online, Trinh stands firm, her spirit shines. No task too great, no challenge too tall, In E-Commerce, she faces them all.
+                            After days of toil, her heart finds rest, In tender moments that she loves best. With children’s laughter, her soul takes flight, In the church’s embrace, under soft light.
+                            It’s here she found a love so true, A bond so deep, it feels brand new. As she steps forward to unite and wed, A bright future lies ahead.
+                            Trinh, a beacon of love and care, A life of joy she’s sure to share.</p>
+                        <div class="social_links">
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ our_love-story -->
+
+    <!-- gallery_area  -->
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center">
+                        <img src="img/banner/flowers.png" alt="">
+                        <h3>Gallery.  Photos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="row grid no-gutters">
+                <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_1">
+                        <a class="popup-image" href="img/gallery/1.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_2">
+                        <a class="popup-image" href="img/gallery/2.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_3">
+                        <a class="popup-image" href="img/gallery/3.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_4">
+                        <a class="popup-image" href="img/gallery/4.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_5">
+                        <a class="popup-image" href="img/gallery/5.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_6">
+                        <a class="popup-image" href="img/gallery/6.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_7">
+                        <a class="popup-image" href="img/gallery/7.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_8">
+                        <a class="popup-image" href="img/gallery/8.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-6 col-lg-6 grid-item">
+                    <div class="single_gallery gallery_imag_9">
+                        <a class="popup-image" href="img/gallery/9.png"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="grid row">
+                <div class="single_image grid-item">
+                    <img src="img/gallery/1.png" alt="">
+                </div><div class="single_image grid-item">
+                    <img src="img/gallery/2.png" alt="">
+                </div><div class="single_image grid-item">
+                    <img src="img/gallery/3.png" alt="">
+                </div>
+            </div> -->
+        
+        
+        </div>
+    </div>
+    <!--/ gallery_area  -->
+
+    <!-- program_details -->
+    <div class="program_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center">
+                        <img src="img/banner/flowers.png" alt="">
+                        <h3>Program. Details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single_program program_bg_1 text-center">
+                        <div class="program_inner ">
+                            <span>
+                                07.00 / 04-Aug
+                            </span>
+                            <h3>Wedding Mass</h3>
+                            <p>You're invited to our Holy wedding mass. Please join us and give us your prayers. </p>
+                            <img src="img/program_details/ornaments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single_program program_bg_2 text-center">
+                        <div class="program_inner ">
+                            <span>
+                                11.00 / 10-Aug
+                            </span>
+                            <h3>Bride Party</h3>
+                            <p>A wedding party for the bride's friends, Please come and cheer with us! </p>
+                            <img src="img/program_details/ornaments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single_program program_bg_3 text-center">
+                        <div class="program_inner ">
+                            <span>
+                                11.00 / 11-Aug
+                            </span>
+                            <h3>Groom Party</h3>
+                            <p>A wedding party for the groom's friends, Please come and cheer with us! </p>
+                            <img src="img/program_details/ornaments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ program_details -->
+
+    <!-- attend_area -->
+    <div class="attending_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
+                    <div class="main_attending_area">
+                        <div class="flower_1 d-none d-lg-block">
+                            <img src="img/appointment/flower-top.png" alt="">
+                        </div>
+                        <div class="flower_2 d-none d-lg-block">
+                            <img src="img/appointment/flower-bottom.png" alt="">
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="popup_box ">
+                                    <div class="popup_inner">
+                                        <div class="form_heading text-center">
+                                            <h3>Are You Attending?</h3>
+                                            <p>Kindly respond before 30 August</p>
+                                        </div>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <input type="text" placeholder="Your Name">
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <input type="text" placeholder="Email">
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <select class="form-select wide" id="default-select" class="">
+                                                        <option data-display="1 Guest">1 Guest</option>
+                                                        <option value="1">2 Guest</option>
+                                                        <option value="2">3 Guest</option>
+                                                        <option value="3">4 Guest</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <textarea placeholder="Additional Message"></textarea>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <button type="submit" class="boxed_btn3">R.S.V.P</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </article>
-                <article class="about-services">
-                    <h3 class="title">My Services</h3>
-                    <div class="line-left">
-                        <article class="line-down">
-                            <div class="fas fa-code"></div>
-                            <h4>WEB DEVELOPMENT</h4>
-                            <p>Modern and mobile-ready website that will help you reach all of your marketing.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="fas fa-music"></div>
-                            <h4>MUSIC WRITING</h4>
-                            <p>Music copying, transcription, arranging and composition services.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-bullhorn"></div>
-                            <h4>ADVETISING</h4>
-                            <p>Advertising services include television, radio, print, mail and web.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-gamepad"></div>
-                            <h4>GAME DEVELOPMENT</h4>
-                            <p>Developing memorable and unique mobile android, ios games.</p>
-                        </article>
-                    </div>
-                </article>
-            </section>
-            <section id="resume" class="resume">
-                <h3 class="title">Resume</h3>
-                <article class="resume-lines">
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-briefcase"></i> Experience</h4>
-                        <article class="line-down">
-                            <div class="date active">2013 - PRESENT</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">FACEBOOK INC.</h6>
-                            <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2011 - 2012</div>
-                            <h5 class="name">FRONT-END DEVELOPER</h5>
-                            <h6 class="company">GOOGLE INC.</h6>
-                            <p>Monitored technical aspects of the front-end delivery for several projects.</p>
-                        </article>
-                        <article>
-                            <div class="date">2009 - 2010</div>
-                            <h5 class="name">SENIOR DEVELOPER</h5>
-                            <h6 class="company">ABC INC.</h6>
-                            <p>Optimize website performance using latest technology.</p>
-                        </article>
-                    </section>
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-university"></i> Education</h4>
-                        <article class="line-down">
-                            <div class="date">2006 - 2008</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">NEW YORK</h6>
-                            <p>Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2005 - 2006</div>
-                            <h5 class="name">PROGRAMMING COURSE</h5>
-                            <h6 class="company">PARIS</h6>
-                            <p>Coursework - Git, WordPress, Javascript, iOS, Android.</p>
-                        </article>
-                        <article>
-                            <div class="date">2004 - 2005</div>
-                            <h5 class="name">WEB DESIGN COURSE</h5>
-                            <h6 class="company">LONDON</h6>
-                            <p>Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript.</p>
-                        </article>
-                    </section>
-                </article>
-                <article class="resume-skills">
-                    <h3 class="title">My Skills</h3>
-                    <div>
-                        <section class="line-left">
-                            <h4 class="line-down"> <i class="fas fa-code"></i> HARD</h4>
-                            <div class="line-down">
-                                <div>Java</div>
-                                <div>
-                                    <div style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>JavaScript</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>Cloud(Azure, AWS)</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>                            
-                            <div class="line-down">
-                                <div>Database</div>
-                                <div>
-                                    <div style="width: 50%"></div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="line-left">
-                            <h4 class="line-down"><i class="fas fa-tasks"></i> SOFT</h4>
-                            <div class="line-down">
-                                <div>Commitment</div>
-                                <div>
-                                    <div style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Leadership</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Time-Management</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>English</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </article>
-            </section>
-            <section id="contact" class="contact">
-              <h3 class="title">Get in Touch</h3>
-              <div class="contact-information line-left">
-                <div>
-                  <span>ADDRESS . . . . </span> HCMC, Vietnam
                 </div>
-                <div>
-                  <span>EMAIL . . . . </span> hungnguyendong0812@gmail.com.vn
-                </div>
-                <div>
-                  <span>PHONE . . . . </span> +84 343 991604
-                </div>
-              </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
+    <!-- / attend_area -->
+
+<!-- ================ contact section start ================= -->
+<section class="location_area">
+    <div class="location_info">
+        <div class="location_inner">
+            <div class="location_top text-center">
+                    <h3>Wedding Mass</h3>
+                    <p>Thai Xuan church, Xuan Dinh, Xuan Loc dist., Dong Nai province. <br>
+                        04-Aug-2024<br>
+                        7:00am – 8:00am <br></p>
+            </div>
+            <div class="address_info d-flex justify-content-between">
+                <div class="single_address text-center">
+                    <h4>Bride Party</h4>
+                    10-Aug-2024<br>
+                        11:00 – 14:00 <br></p>
+                </div>
+                <div class="single_address text-center">
+                    <h4>Groom party</h4>
+                    11-Aug-2024<br>
+                        11:00 – 14:00 <br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="d-none d-sm-block">
+            <div id="" style="height: 480px; position: relative; overflow: hidden;"></div>
+        </div>
+    </div>
+</section>
+<!-- ================ contact section end ================= -->
+
+    <!-- footer_start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="quick_links">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is edited by <a href="#">Hung Nguyen</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        $('#clock').countdown('2024/08/04', function (event) {
+            $(this).html(event.strftime(
+                '<div class="countdown_wrap d-flex"><div  class="single_countdown"><h3>%D</h3><span>Days</span></div><div class="single_countdown"><h3>%H</h3><span>Hours</span></div><div class="single_countdown"><h3>%M</h3><span>Minutes</span></div><div class="single_countdown"><h3>%S</h3><span>Seconds</span></div></div>'
+            ));
+        });
+    </script>
+    <script>
+        function initMap() {
+            var uluru = {
+                lat: -25.363,
+                lng: 131.044
+            };
+            var grayStyles = [{
+                    featureType: "all",
+                    stylers: [{
+                            saturation: -90
+                        },
+                        {
+                            lightness: 50
+                        }
+                    ]
+                },
+                {
+                    elementType: 'labels.text.fill',
+                    stylers: [{
+                        color: '#ccdee9'
+                    }]
+                }
+            ];
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: -31.197,
+                    lng: 150.744
+                },
+                zoom: 9,
+                styles: grayStyles,
+                scrollwheel: false
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+    </script>
+
+
 
 </body>
 
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
-</body>
 </html>
