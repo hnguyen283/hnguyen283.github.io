@@ -7,6 +7,7 @@ let getContact = document.getElementById("getContact");
 let about = document.getElementById("about");
 let resume = document.getElementById("resume");
 let contact = document.getElementById("contact");
+let banner = document.getElementById("slider_banner");
 
 function removeClass() {
     // Links
