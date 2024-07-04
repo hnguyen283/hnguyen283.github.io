@@ -23,6 +23,7 @@
         .logo-img{
             @media #{$mobile_device} {
                 // padding-left: 20px;
+                scale: 75%;
             }
             @media #{$tablet_device} {
                 // padding-left: 20px;

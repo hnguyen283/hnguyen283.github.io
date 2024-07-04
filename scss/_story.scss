@@ -1,12 +1,42 @@
 .love_story_area{
     padding-top: 75px;
     padding-bottom: 30px;
+    .love_story_1_col{
+        display: none;
+    }
+    .love_story_2_col{
+        display: none;
+    }
     @media #{$mobile_device} {
         padding-top: 50px;
         padding-bottom: 20px;
+        .love_story_1_col{
+            display: flex;
+        }
+        .love_story_3_col{
+            display: none;
+        }
     }
+    @media #{$tablet_device} {
+        .love_story_2_col{
+            display: flex;
+        }
+        .love_story_3_col{
+            display: none;
+        }
+    }
+    @media #{$mid_device} {
+        .love_story_3_col{
+            display: flex;
+        }
+    }
+
     .single_lover_story{
         margin-bottom: 30px;
+        @media #{$tablet_device} {
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
         .story_thumb{
             width: 247px;
             height: 247px;

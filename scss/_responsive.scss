@@ -1,3 +1,6 @@
+/* Supper large desktop :1500px. */
+$supper_large_device:'(min-width: 1501px)';
+
 /* Normal desktop :1200px. */
 $large_device:'(min-width: 1200px) and (max-width: 1500px)';
 
@@ -7,9 +10,9 @@ $mid_device:'(min-width: 992px) and (max-width: 1200px)';
 /* Tablet desktop :768px. */
 $tablet_device:'(min-width: 768px) and (max-width: 991px)';
 
-/* small mobile :320px. */
-$mobile_device:'(max-width: 767px)';
-
 /* Large Mobile :480px. */
 $large_mobile:'only screen and (min-width: 480px) and (max-width: 767px)';
+
+/* small mobile :320px. */
+$mobile_device:'(max-width: 767px)';
 
