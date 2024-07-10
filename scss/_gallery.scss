@@ -93,13 +93,10 @@
 
     }
     .gallery_imag_9{
-        @media #{$tablet_device}{
-            display: none;
-        }
-        @media #{$mid_device}{
-            display: none;
-        }
         @media #{$large_device}{
+            display: none;
+        }
+        @media #{$supper_large_device}{
             display: none;
         }
     }

@@ -597,12 +597,12 @@ h3 {
     padding: 10px 0;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .header-area .main-header-area {
     padding: 0 50px;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .header-area .main-header-area {
     padding: 0 50px;
   }
@@ -639,13 +639,13 @@ h3 {
   font-family: "Muli", sans-serif;
   position: relative;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .header-area .main-header-area .main-menu ul li a {
     padding: 35px 8px 35px 8px;
     font-size: 15px;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .header-area .main-header-area .main-menu ul li a {
     padding: 38px 18px 38px 18px;
   }
@@ -761,12 +761,12 @@ h3 {
 .header-area .main-header-area.sticky .main-menu ul li a {
   padding: 35px 18px 35px 18px;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .header-area .main-header-area.sticky .main-menu ul li a {
     padding: 35px 8px 35px 8px;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .header-area .main-header-area.sticky .main-menu ul li a {
     padding: 35px 8px 35px 8px;
   }
@@ -835,13 +835,13 @@ h3 {
     background-position: right center;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .slider_area_inner {
     height: 700px;
     background-position: right;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .slider_area_inner {
     height: 800px;
     background-position: right;
@@ -891,7 +891,7 @@ h3 {
     height: 270px;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .slider_area_inner .slider_text {
     transform: rotate(0deg);
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
@@ -899,7 +899,7 @@ h3 {
     top: 70%;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .slider_area_inner .slider_text {
     transform: rotate(0deg);
     transform: translateX(-50%) translateY(-50%) rotate(25deg);
@@ -920,12 +920,12 @@ h3 {
     transform: rotate(0deg);
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .slider_area_inner .slider_text .text_inner {
     transform: rotate(0deg);
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .slider_area_inner .slider_text .text_inner {
     transform: rotate(-25deg);
   }
@@ -995,7 +995,7 @@ h3 {
     display: none;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .slider_area_inner .slider_text:before {
     display: none;
   }
@@ -1023,7 +1023,7 @@ h3 {
     display: none;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .slider_area_inner .slider_text:after {
     display: none;
   }
@@ -1343,7 +1343,7 @@ h3 {
     display: none;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .love_story_area .love_story_3_col {
     display: flex;
   }
@@ -1529,17 +1529,12 @@ h3 {
   width: 100%;
   height: 100%;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 1281px) and (max-width: 1500px) {
   .gallery_area .gallery_imag_9 {
     display: none;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
-  .gallery_area .gallery_imag_9 {
-    display: none;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1500px) {
+@media (min-width: 1501px) {
   .gallery_area .gallery_imag_9 {
     display: none;
   }
@@ -1702,7 +1697,7 @@ h3 {
     margin: 0 20px;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1280px) {
   .bradcam_area {
     margin: 0 50px;
   }
