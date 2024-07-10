@@ -12,6 +12,7 @@
   justify-content: start;
 }
 
+/* X Supper large desktop :2400px. */
 /* Supper large desktop :1500px. */
 /* Normal desktop :1200px. */
 /* Normal desktop :992px. */
@@ -1505,7 +1506,7 @@ h3 {
     padding: 0;
   }
 }
-@media (min-width: 1501px) {
+@media (min-width: 1501px) and (max-width: 2399px) {
   .gallery_area {
     padding: 0 100px;
   }
@@ -1534,9 +1535,14 @@ h3 {
     display: none;
   }
 }
-@media (min-width: 1501px) {
+@media (min-width: 1501px) and (max-width: 2399px) {
   .gallery_area .gallery_imag_9 {
     display: none;
+  }
+}
+@media (min-width: 2400px) {
+  .gallery_area .gallery_imag_9 {
+    display: flex;
   }
 }
 

@@ -99,5 +99,8 @@
         @media #{$supper_large_device}{
             display: none;
         }
+        @media #{$x_supper_large_device}{
+            display: flex;
+        }
     }
 }

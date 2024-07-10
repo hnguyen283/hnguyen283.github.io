@@ -1,5 +1,7 @@
+/* X Supper large desktop :2400px. */
+$x_supper_large_device:'(min-width: 2400px)';
 /* Supper large desktop :1500px. */
-$supper_large_device:'(min-width: 1501px)';
+$supper_large_device:'(min-width: 1501px) and (max-width: 2399px)';
 
 /* Normal desktop :1200px. */
 $large_device:'(min-width: 1281px) and (max-width: 1500px)';
