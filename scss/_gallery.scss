@@ -80,33 +80,13 @@
         overflow: hidden;
         position: relative;
         @media #{$tablet_device} {
-            height: 14rem;
+            height: 16rem;
         }
         @media #{$supper_large_device} {
             height: 612px;
         }
         @media #{$x_supper_large_device} {
             height: 1021px;
-        }
-    }
-    .gallery_imag_1{
-        @media #{$tablet_device} {
-            margin-left: 2rem;
-        }
-    }
-    .gallery_imag_3{
-        @media #{$tablet_device} {
-            margin-left: 2rem;
-        }
-    }
-    .gallery_imag_5{
-        @media #{$tablet_device} {
-            margin-left: 2rem;
-        }
-    }
-    .gallery_imag_7{
-        @media #{$tablet_device} {
-            margin-left: 2rem;
         }
     }
     .grid-item {
