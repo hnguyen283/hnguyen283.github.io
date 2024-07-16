@@ -405,14 +405,14 @@
         </div>
         <div class="gallery_2_col">
             <div class="container-fluid">
-                <div class="row grid no-gutters">
-                    <div class="col-xs-12 col-sm-6 col-md-5 grid-item">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-5 single_gallery_box">
                         <div class="single_gallery gallery_imag_1">
                             <a class="popup-image" href="img/gallery/1.png">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-7 grid-item">
+                    <div class="col-xs-12 col-sm-7 single_gallery_box">
                         <div class="single_gallery gallery_imag_2">
                             <a class="popup-image" href="img/gallery/2.png">
                             </a>
@@ -420,41 +420,41 @@
                     </div>                   
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-6 single_gallery_box">
                         <div class="single_gallery gallery_imag_3">
                             <a class="popup-image" href="img/gallery/3.png">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-6 single_gallery_box">
                         <div class="single_gallery gallery_imag_4">
                             <a class="popup-image" href="img/gallery/4.png">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="row grid no-gutters">
-                    <div class="col-xs-12 col-sm-6 col-md-7 grid-item">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-7 single_gallery_box">
                         <div class="single_gallery gallery_imag_5">
                             <a class="popup-image" href="img/gallery/5.png">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-5 grid-item">
+                    <div class="col-xs-12 col-sm-5 single_gallery_box">
                         <div class="single_gallery gallery_imag_6">
                             <a class="popup-image" href="img/gallery/6.png">
                             </a>
                         </div>
                     </div>
                 </div>                
-                <div class="row grid no-gutters">
-                    <div class="col-xs-12 col-sm-6 col-md-5 grid-item">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-5 single_gallery_box">
                         <div class="single_gallery gallery_imag_7">
                             <a class="popup-image" href="img/gallery/7.png">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-7 grid-item">
+                    <div class="col-xs-12 col-sm-7 single_gallery_box">
                         <div class="single_gallery gallery_imag_8">
                             <a class="popup-image" href="img/gallery/8.png">
                             </a>
@@ -642,46 +642,6 @@
             ));
         });
     </script>
-    <script>
-        function initMap() {
-            var uluru = {
-                lat: -25.363,
-                lng: 131.044
-            };
-            var grayStyles = [{
-                featureType: "all",
-                stylers: [{
-                    saturation: -90
-                },
-                {
-                    lightness: 50
-                }
-                ]
-            },
-            {
-                elementType: 'labels.text.fill',
-                stylers: [{
-                    color: '#ccdee9'
-                }]
-            }
-            ];
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: -31.197,
-                    lng: 150.744
-                },
-                zoom: 9,
-                styles: grayStyles,
-                scrollwheel: false
-            });
-        }
-    </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
-        </script>
-
-
-
 </body>
 
 </html>

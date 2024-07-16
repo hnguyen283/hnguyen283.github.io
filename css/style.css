@@ -21,7 +21,6 @@
 /* Normal desktop :1200px. */
 /* Normal desktop :992px. */
 /* Tablet desktop :768px. */
-/* Large Mobile :480px. */
 /* small mobile :320px. */
 /* 1. Theme default css */
 body {
@@ -1506,18 +1505,7 @@ h3 {
 }
 
 .gallery_area {
-  padding: 0 50px;
   padding-top: 90px;
-}
-@media (max-width: 768px) {
-  .gallery_area {
-    padding: 0;
-  }
-}
-@media (min-width: 1501px) and (max-width: 2399px) {
-  .gallery_area {
-    padding: 0 100px;
-  }
 }
 .gallery_area .single_gallery {
   height: 460px;
@@ -1546,6 +1534,9 @@ h3 {
   overflow: hidden;
   padding: 4px !important;
 }
+.gallery_area .single_gallery_box {
+  padding: 4px !important;
+}
 .gallery_area a {
   position: absolute;
   left: 0;
@@ -1561,7 +1552,7 @@ h3 {
     display: block;
   }
 }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media (max-width: 768px) {
   .gallery_area .gallery_2_col {
     display: block;
   }
@@ -1571,7 +1562,7 @@ h3 {
     display: none;
   }
 }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media (max-width: 768px) {
   .gallery_area .gallery_default {
     display: none;
   }
@@ -3942,210 +3933,5 @@ h6 {
 }
 
 /*============ End Blog Single Styles  =============*/
-/**************** blog part css start ****************/
-.blog_part {
-  margin-bottom: 140px;
-}
-@media (max-width: 576px) {
-  .blog_part {
-    margin-bottom: 0px;
-    padding: 0px 0px 70px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part {
-    margin-bottom: 0px;
-    padding: 0px 0px 70px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog_part {
-    margin-bottom: 0px;
-    padding: 0px 0px 70px;
-  }
-}
-.blog_part .blog_right_sidebar .widget_title {
-  font-size: 20px;
-  margin-bottom: 40px;
-  font-style: inherit !important;
-}
-@media (max-width: 576px) {
-  .blog_part .single-home-blog {
-    margin-bottom: 140px;
-    margin-top: 20px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part .single-home-blog {
-    margin-bottom: 140px;
-    margin-top: 20px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog_part .single-home-blog {
-    margin-bottom: 140px;
-    margin-top: 20px;
-  }
-}
-.blog_part .single-home-blog .card-img-top {
-  border-radius: 0px;
-}
-.blog_part .single-home-blog .card {
-  border: 0px solid transparent;
-  border-radius: 0px;
-  background-color: transparent;
-  position: relative;
-}
-.blog_part .single-home-blog .card .card-body {
-  padding: 25px 10px 29px 40px;
-  background-color: #fff;
-  position: absolute;
-  left: 20px;
-  bottom: -140px;
-  box-shadow: -7.552px 9.326px 20px 0px rgba(1, 84, 85, 0.1);
-  border-radius: 10px;
-}
-@media (max-width: 576px) {
-  .blog_part .single-home-blog .card .card-body {
-    padding: 15px;
-    left: 10px;
-    bottom: -140px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part .single-home-blog .card .card-body {
-    padding: 15px;
-    left: 10px;
-    bottom: -140px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .blog_part .single-home-blog .card .card-body {
-    padding: 20px;
-  }
-}
-.blog_part .single-home-blog .card .card-body a {
-  color: #000;
-  text-transform: uppercase;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-}
-.blog_part .single-home-blog .card .card-body a:hover {
-  background: -webkit-linear-gradient(131deg, #ff7e5f 0%, #feb47b 99%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.blog_part .single-home-blog .card .dot {
-  position: relative;
-  padding-left: 20px;
-}
-.blog_part .single-home-blog .card .dot:after {
-  position: absolute;
-  content: "";
-  width: 10px;
-  height: 10px;
-  top: 5px;
-  left: 0;
-  background-color: #000;
-  border-radius: 50%;
-}
-.blog_part .single-home-blog .card span {
-  color: #8a8a8a;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-top: 10px;
-}
-@media (max-width: 576px) {
-  .blog_part .single-home-blog .card span {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part .single-home-blog .card span {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog_part .single-home-blog .card span {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .blog_part .single-home-blog .card span {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
-.blog_part .single-home-blog .card h5 {
-  font-weight: 600;
-  line-height: 1.5;
-  font-size: 20px;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-  text-transform: capitalize;
-  margin-bottom: 22px;
-}
-@media (max-width: 576px) {
-  .blog_part .single-home-blog .card h5 {
-    margin-bottom: 10px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part .single-home-blog .card h5 {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog_part .single-home-blog .card h5 {
-    margin-bottom: 10px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .blog_part .single-home-blog .card h5 {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-}
-.blog_part .single-home-blog .card h5:hover {
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-  background: -webkit-linear-gradient(131deg, #feb47b 0%, #ff7e5f 99%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: 1s;
-}
-.blog_part .single-home-blog .card ul li {
-  display: inline-block;
-  color: #8a8a8a;
-  margin-right: 14px;
-}
-@media (max-width: 576px) {
-  .blog_part .single-home-blog .card ul li {
-    margin-right: 10px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .blog_part .single-home-blog .card ul li {
-    margin-right: 10px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog_part .single-home-blog .card ul li {
-    margin-right: 10px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .blog_part .single-home-blog .card ul li {
-    margin-right: 10px;
-  }
-}
-.blog_part .single-home-blog .card ul li span {
-  margin-right: 10px;
-  font-size: 12px;
-}
 
 /*# sourceMappingURL=style.css.map */
