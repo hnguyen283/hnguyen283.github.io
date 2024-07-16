@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,600i,700,700i,800,800i,900|Petit+Formal+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,600i,700,700i,800,800i,900|Petit+Formal+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 .flex-center-start {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,7 +23,7 @@
 /* small mobile :320px. */
 /* 1. Theme default css */
 body {
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: normal;
   font-style: normal;
   overflow-x: hidden;
@@ -68,7 +70,7 @@ button {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   color: #1F1F1F;
 }
 
@@ -96,7 +98,7 @@ p {
   line-height: 28px;
   color: #727272;
   margin-bottom: 13px;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
 }
 
 label {
@@ -384,7 +386,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 15px 44px;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 16px;
   font-weight: 600;
   border: 0;
@@ -940,7 +942,7 @@ h3 {
 }
 .slider_area_inner .slider_text h3 {
   font-size: 36px;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: 400;
   color: #fff;
   line-height: 46px;
@@ -969,7 +971,7 @@ h3 {
 }
 .slider_area_inner .slider_text span {
   font-size: 18px;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: 400;
   color: #fff;
 }
@@ -1056,6 +1058,9 @@ h3 {
     padding-bottom: 30px;
   }
 }
+.weeding_countdown_area .section_title h3 {
+  font-family: "Muli", sans-serif;
+}
 .weeding_countdown_area .countdown_area {
   padding: 35px 35px 50px 35px;
   background-size: cover;
@@ -1077,7 +1082,7 @@ h3 {
 }
 .weeding_countdown_area .countdown_area .countdown_wrap .single_countdown h3 {
   font-size: 60px;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: 400;
   color: #C78665;
   margin-bottom: 17px;
@@ -1122,7 +1127,7 @@ h3 {
 .program_details_area .single_program .program_inner span {
   font-size: 20px;
   font-weight: 400;
-  font-family: "Petit Formal Script", cursive;
+  font-family: "Dancing Script", cursive;
 }
 .program_details_area .single_program .program_inner h3 {
   font-family: "Muli", sans-serif;
@@ -1403,6 +1408,7 @@ h3 {
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 28px;
+  font-family: "Muli", sans-serif;
 }
 .love_story_area .single_lover_story .social_links {
   text-align: center;
@@ -1462,39 +1468,39 @@ h3 {
 }
 
 .gallery_imag_1 {
-  background-image: url(../img/gallery/1.png);
+  background-image: url(../img/gallery/1.jpeg);
 }
 
 .gallery_imag_2 {
-  background-image: url(../img/gallery/2.png);
+  background-image: url(../img/gallery/2.jpeg);
 }
 
 .gallery_imag_3 {
-  background-image: url(../img/gallery/3.png);
+  background-image: url(../img/gallery/3.jpeg);
 }
 
 .gallery_imag_4 {
-  background-image: url(../img/gallery/4.png);
+  background-image: url(../img/gallery/4.jpeg);
 }
 
 .gallery_imag_5 {
-  background-image: url(../img/gallery/5.png);
+  background-image: url(../img/gallery/5.jpeg);
 }
 
 .gallery_imag_6 {
-  background-image: url(../img/gallery/6.png);
+  background-image: url(../img/gallery/6.jpeg);
 }
 
 .gallery_imag_7 {
-  background-image: url(../img/gallery/7.png);
+  background-image: url(../img/gallery/7.jpeg);
 }
 
 .gallery_imag_8 {
-  background-image: url(../img/gallery/8.png);
+  background-image: url(../img/gallery/8.jpeg);
 }
 
 .gallery_imag_9 {
-  background-image: url(../img/gallery/9.png);
+  background-image: url(../img/gallery/9.jpeg);
 }
 
 .gallery_area {
@@ -1530,19 +1536,27 @@ h3 {
   width: 100%;
   height: 100%;
 }
-@media (min-width: 1281px) and (max-width: 1500px) {
-  .gallery_area .gallery_imag_9 {
+.gallery_area .gallery_2_col {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .gallery_area .gallery_2_col {
+    display: block;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .gallery_area .gallery_2_col {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .gallery_area .gallery_default {
     display: none;
   }
 }
-@media (min-width: 1501px) and (max-width: 2399px) {
-  .gallery_area .gallery_imag_9 {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .gallery_area .gallery_default {
     display: none;
-  }
-}
-@media (min-width: 2400px) {
-  .gallery_area .gallery_imag_9 {
-    display: flex;
   }
 }
 
