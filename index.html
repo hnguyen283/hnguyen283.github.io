@@ -1,256 +1,181 @@
-<!DOCTYPE html>
-<html lang="en" >
+<html lang="en" ng-app="hungApp">
+
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - FBootstrapping Proyecto</title>
-  <link rel="stylesheet" href="./style.css">
+    <!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>www.bingboo.com - Profile</title>
+    <link rel="icon" type="image/x-icon" href="well_life_icon.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+
+    <script type="text/javascript" src="js/Chart.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-animate.js"></script>
+    <script type="text/javascript" src="js/angular-aria.js"></script>
+    <script type="text/javascript" src="js/angular-messages.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/angular-chart.js"></script>
+
+    <script src="app-code/app.js"></script>
+    <script src="app-code/directive.js"></script>
+    <script src="app-code/common-service.js"></script>
+    <script src="app-code/home/home-controller.js"></script>
+
+    <style>
+        body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          background-color: #f9f9f9;
+          color: #333;
+          line-height: 1.6;
+        }
+        .section {
+          padding: 60px 15px;
+        }
+        .section:nth-child(even) {
+          background-color: #ffffff;
+        }
+        .header {
+          background: #000;
+          color: #fff;
+          text-align: center;
+          padding: 100px 20px;
+        }
+        .header h1 {
+          font-size: 48px;
+          margin-bottom: 10px;
+        }
+        .header p {
+          font-size: 20px;
+        }
+        h3 {
+          font-size: 28px;
+          margin-top: 0;
+        }
+        ul {
+          padding-left: 20px;
+        }
+        footer {
+          background: #222;
+          color: #aaa;
+          text-align: center;
+          padding: 30px 15px;
+        }
+        footer a {
+          color: #fff;
+          text-decoration: underline;
+        }
+      </style>
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<html lang="en">
 
-  <head>
-      <meta charset="UTF-8" />
-      <meta name ="viewport" content="width = device-width, initial-scale = 1" >
-      <title>Bootcamp / CV</title>
-      <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans" />
-      <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
-          crossorigin="anonymous" />
-      <!-- <link rel="stylesheet" href="style.css" /> -->
-      <link rel="shortcut icon" href="./favicon.ico">
-  </head>
+<body ng-controller="HomeController as home">
 
-<body> 
-    <div class="background gradient">
-      <!-- Delete if animation
-        <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-      -->
+    <div class="header">
+        <h1>Well Life Solution Team</h1>
+        <p>Empowering Businesses Through Custom Software</p>
+      </div>
+
+    <div class="container section">
+        <div class="row">
+            <div class="col-md-6">
+              <h3>Introduction</h3>
+              <p>We specialize in delivering high-quality software solutions to global clients, focusing on the EU and US markets. Our mission is to become your trusted technology partner in industries like finance, warehouse management, startups, and SMEs.</p>
+      
+              <h3>Service Offerings</h3>
+              <h4>1. All-in-One Project Delivery</h4>
+              <p>End-to-end delivery with full responsibility, managed timelines, fixed budget, and post-launch support.</p>
+              <h4>2. Dedicated Outsourcing Services</h4>
+              <p>Provide skilled developers to integrate with your team on a time-based, flexible model.</p>
+      
+              <h3>Technical Expertise</h3>
+              <ul>
+                <li>Web Applications: React, Angular, Vue, Node.js, Java, .NET, Python</li>
+                <li>Cloud: AWS, Azure, Google Cloud, Docker, Kubernetes</li>
+                <li>Mobile: iOS, Android, Flutter, React Native</li>
+                <li>Data & Integration: SQL/NoSQL, CRM, IoT, Payment Systems</li>
+                <li>UI/UX: Modern, user-centric interfaces</li>
+              </ul>
+            </div>
+      
+            <div class="col-md-6">
+              <h3>Our Strengths and Values</h3>
+              <ul>
+                <li><strong>Proven Expertise:</strong> Experienced engineers and managers with domain versatility.</li>
+                <li><strong>Client-Centric Approach:</strong> Emphasis on collaboration and requirement alignment.</li>
+                <li><strong>Quality Assurance:</strong> Rigorous testing and secure development practices.</li>
+                <li><strong>Agile & Adaptive:</strong> Flexible response to changes using Agile methodologies.</li>
+                <li><strong>Full Lifecycle Support:</strong> From consultation to post-launch support.</li>
+              </ul>
+      
+              <h3>Industries We Serve</h3>
+              <ul>
+                <li><strong>Finance:</strong> Secure fintech apps and compliance-focused systems.</li>
+                <li><strong>Warehouse Management:</strong> Inventory and logistics optimization tools.</li>
+                <li><strong>Startups:</strong> MVPs and scalable cloud-based products.</li>
+                <li><strong>SMEs:</strong> Workflow automation, customer portals, and custom tools.</li>
+              </ul>
+      
+              <h3>Engagement Models</h3>
+              <h4>Option A: All-in-One</h4>
+              <p>We manage the full system delivery with milestone demos and support.</p>
+              <h4>Option B: Outsourcing</h4>
+              <p>We provide flexible staffing under your leadership and direction.</p>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-responsive" src="images/header.gif" alt="">
+            </div>
+            <div class="col-lg-8">
+                <div class="row margin-bottom-20">
+                    <div class="col-md-12">
+                        <h4> <strong>Full Name:</strong> NGUYEN DONG HUNG ( Nguyễn Đông Hưng ) </h4>
+                    </div>
+                </div>               
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Email: </strong> <a href="mailto:hungnguyendong0812@gmail.com">hungnguyendong0812@gmail.com</a> | </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><a href="https://www.linkedin.com/in/hungnguyend" target="_blank">LinkedIn</a></p>
+                    </div>
+                </div>                
+            </div>
+        </div>       
+       
     </div>
-    <div class="page">
-        <header>
-            <nav>
-                <a href="#about" class="selected" id='getAbout'>
-                    <span class="fas fa-user"></span>
-                    <span class="link">About</span>
-                </a>
-                <a href="#resume" id='getResume'>
-                    <span class="fas fa-file"></span>
-                    <span class="link">Resume</span>
-                </a>
-                <a href="#contact" id='getContact'>
-                    <span class="fas fa-at"></span>
-                    <span class="link">Contact</span>
-                </a>
-            </nav>
-        </header>
-        <main>
-            <section id="presentation" class="profile">
-                <div class="profile-background"></div>
-                <div>
-                    <div class="profile-image">
-                        <img src="images/avatar.jpg"  alt="Hung Nguyen">
-                    </div>
-                    <h1 class="profile-name" id="nombre">Hung D Nguyen</h1>
-                    <h2 class="profile-profession">Java Software Engineer</h2>
-                    <div class="profile-social" id="profile-social">
-                        <a href="https://www.linkedin.com/in/hungnguyend/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/hnguyen283" class="fab fa-github"></a>
-                    </div>
+    <footer>
+        <div class="row">
+            <div class="flex-container">
+                <div class="flex-row">
+                    <p>Copyright &copy; Hung Dong Nguyen</p>
                 </div>
-                <div class="profile-buttons">
-                    <a href="https://www.linkedin.com/ambry/?x-li-ambry-ep=AQKN8GDCcMrcsQAAAZApsP06W5CIaVs7PW7Zw2GjdujwAseT-_uLC9BYRiZeJ_c65nZCfS5e3RUfNnYhe42zSidhadfzxSnxJd1cxMxBugKSpti8zNc8uRZ3hzO8fxtYE41Gd7zY_tD6_H-AarTkkLNT3UHl7cnc0k5njYRsQZxzoO6C7_bHrmA6D192k1o_ha7H5NGPaaem8whv16rQ7EtZNlsujNfmPRooKbgp0yzzKKCPda8lueHQroyLe9a2SXjjQgXVwvs_Fo7-EymKWIdt3bd3gWKFt8-Ss_UDMT_PfH3_UW3uee-wmmCydAgfqT9Fssa3waEr2jtfNcc3tYW9_EGag2756dvs2K0Iuc0C0cL14TQe7CV0GAYpAr_wu8v62nJcx-GPRhowme5CvAx8iFAYrfEnS3VeK1LfTa10ldicgQZRc2t5xJbLtWSRkKduX6Ua_70DeC24xddac8rraXFEwPbX0JDBgz8jqvJ1mcBQmOy7brPyl6OEW7CbKgrUC_LeWck5d_tsWNledOr_R7BekqzVr38P676DJqy-NFA3Oxhedc7zFHgh4ubxwoVvDA&x-ambry-um-filename=Profile.pdf" download>DOWNLOAD CV <i class="fas fa-download"></i></a>
-                    <a href="https://www.linkedin.com/in/hungnguyend/">CONTACT ME <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </section>
-            <section id="about" class="about view">
-                <article class="about-aboutMe">
-                    <h3 class="title">About Me</h3>
-                    <div class="line-left">
-                        <p>As an experienced technical lead proficient in Java, Microservices, OOP, MVC, and cloud platforms like AWS and MS Azure.</p>
-                        <p>I have a proven track record of leading cross-functional teams to deliver innovative solutions. With strong Java skills, I tackle complex coding challenges and architect scalable systems.</p> 
-                        <p>As a passionate leader, I empower teams to excel and foster a culture of continuous learning.</p>
-                        <p>I am excited to bring my technical leadership skills to your organization and contribute to its success.</p>
-                        <div>
-                            <div>
-                                <span>BORN . . . . </span>1994
-                            </div>
-                            <div>
-                                <span>RESIDENCE . . . . </span>Vietnam
-                            </div>
-                            <div>
-                                <span>ADDRESS . . . . </span>HCMC, Vietnam
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="about-services">
-                    <h3 class="title">My Services</h3>
-                    <div class="line-left">
-                        <article class="line-down">
-                            <div class="fas fa-code"></div>
-                            <h4>WEB DEVELOPMENT</h4>
-                            <p>Modern and mobile-ready website that will help you reach all of your marketing.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="fas fa-music"></div>
-                            <h4>MUSIC WRITING</h4>
-                            <p>Music copying, transcription, arranging and composition services.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-bullhorn"></div>
-                            <h4>ADVETISING</h4>
-                            <p>Advertising services include television, radio, print, mail and web.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-gamepad"></div>
-                            <h4>GAME DEVELOPMENT</h4>
-                            <p>Developing memorable and unique mobile android, ios games.</p>
-                        </article>
-                    </div>
-                </article>
-            </section>
-            <section id="resume" class="resume">
-                <h3 class="title">Resume</h3>
-                <article class="resume-lines">
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-briefcase"></i> Experience</h4>
-                        <article class="line-down">
-                            <div class="date active">2013 - PRESENT</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">FACEBOOK INC.</h6>
-                            <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2011 - 2012</div>
-                            <h5 class="name">FRONT-END DEVELOPER</h5>
-                            <h6 class="company">GOOGLE INC.</h6>
-                            <p>Monitored technical aspects of the front-end delivery for several projects.</p>
-                        </article>
-                        <article>
-                            <div class="date">2009 - 2010</div>
-                            <h5 class="name">SENIOR DEVELOPER</h5>
-                            <h6 class="company">ABC INC.</h6>
-                            <p>Optimize website performance using latest technology.</p>
-                        </article>
-                    </section>
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-university"></i> Education</h4>
-                        <article class="line-down">
-                            <div class="date">2006 - 2008</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">NEW YORK</h6>
-                            <p>Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2005 - 2006</div>
-                            <h5 class="name">PROGRAMMING COURSE</h5>
-                            <h6 class="company">PARIS</h6>
-                            <p>Coursework - Git, WordPress, Javascript, iOS, Android.</p>
-                        </article>
-                        <article>
-                            <div class="date">2004 - 2005</div>
-                            <h5 class="name">WEB DESIGN COURSE</h5>
-                            <h6 class="company">LONDON</h6>
-                            <p>Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript.</p>
-                        </article>
-                    </section>
-                </article>
-                <article class="resume-skills">
-                    <h3 class="title">My Skills</h3>
-                    <div>
-                        <section class="line-left">
-                            <h4 class="line-down"> <i class="fas fa-code"></i> HARD</h4>
-                            <div class="line-down">
-                                <div>Java</div>
-                                <div>
-                                    <div style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>JavaScript</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>Cloud(Azure, AWS)</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>                            
-                            <div class="line-down">
-                                <div>Database</div>
-                                <div>
-                                    <div style="width: 50%"></div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="line-left">
-                            <h4 class="line-down"><i class="fas fa-tasks"></i> SOFT</h4>
-                            <div class="line-down">
-                                <div>Commitment</div>
-                                <div>
-                                    <div style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Leadership</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Time-Management</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>English</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </article>
-            </section>
-            <section id="contact" class="contact">
-              <h3 class="title">Get in Touch</h3>
-              <div class="contact-information line-left">
-                <div>
-                  <span>ADDRESS . . . . </span> HCMC, Vietnam
-                </div>
-                <div>
-                  <span>EMAIL . . . . </span> hungnguyendong0812@gmail.com.vn
-                </div>
-                <div>
-                  <span>PHONE . . . . </span> +84 343 991604
-                </div>
-              </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    </div>
 </body>
 
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
-</body>
 </html>
