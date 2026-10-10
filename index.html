@@ -295,6 +295,12 @@ footer .mono { font-family: var(--font-mono); }
   color: #fff; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
 }
 .yt-facade:hover .yt-play { filter: brightness(1.1); }
+
+/* ---------- career roles: description + tech stack ---------- */
+.role .role-desc { max-width: 46rem; }
+.role-tech { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; font-size: 0.9375rem; max-width: 46rem; }
+.role-tech span { font: 500 0.6875rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+#skills .skills dt, #domains .skills dt { text-transform: none; letter-spacing: 0.02em; }
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
@@ -306,9 +312,9 @@ footer .mono { font-family: var(--font-mono); }
     <a class="mark" href="#top">N. D. Hung</a>
     <nav aria-label="Sections">
       <ul>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#career">Career</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#welllife">Well Life</a></li>
         <li><a href="#work">Work with me</a></li>
       </ul>
@@ -319,11 +325,11 @@ footer .mono { font-family: var(--font-mono); }
 <main class="wrap" id="top">
   <header class="hero">
     <div>
-      <p class="eyebrow">Technical Lead · Enterprise software</p>
+      <p class="eyebrow">Java Enterprise Systems · Integration &amp; Modernisation</p>
       <h1>Nguyen Dong Hung</h1>
-      <p class="tagline">Technical lead and Java engineer delivering dependable enterprise systems in insurance, aviation and logistics.</p>
+      <p class="tagline">Technical Lead with over ten years of enterprise software development, mainly in Java and Spring, across insurance, aviation and logistics automation.</p>
     </div>
-    <p class="summary">I have built enterprise software since 2016, across insurance at DXC Technology, aviation at FPT Software and warehouse automation at Swisslog, moving from full-stack development to leading teams. Today, as a Technical Lead, I plan and deliver customer projects and supervise a team of engineers. With my teams and customers across Europe, Asia, the Middle East and the US, I focus on clear requirements, sound architecture, careful integration of new and legacy systems, and upgrades that do not interrupt the business. In my own time I build AI-powered applications.</p>
+    <p class="summary">I am experienced in full-stack development, system integration, legacy modernisation and solution design, and in leading development teams that work with customers across Europe, Asia, the Middle East and the US. In my own time I build AI-powered applications.</p>
 
     <a class="avail" href="#work">Open to outsourcing projects</a>
 
@@ -356,6 +362,34 @@ footer .mono { font-family: var(--font-mono); }
     </div>
   </header>
 
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="section-head">
+      <h2 id="skills-h">Technical skills</h2>
+    </div>
+    <dl class="skills">
+      <div><dt>Languages &amp; frameworks</dt><dd>Java · Java EE (JPA, EJB, JSF) · Spring Boot · Spring MVC · Spring Cloud · JavaScript · Angular · AngularJS · HTML &amp; CSS · Node.js</dd></div>
+      <div><dt>Architecture &amp; integration</dt><dd>Microservices · RESTful APIs · Kafka messaging · Enterprise service bus (MuleSoft, WSO2) · Single sign-on · Telegram-based integration · Legacy migration</dd></div>
+      <div><dt>Data &amp; platforms</dt><dd>SQL and NoSQL databases (PostgreSQL) · WildFly · WebLogic · Liferay · Docker · AWS · Azure</dd></div>
+      <div><dt>Delivery &amp; leadership</dt><dd>Requirements analysis · Solution design · Project and change-order management · Factory acceptance testing · Production support · Team supervision · Capacity planning · Mentoring</dd></div>
+      <div><dt>Quality &amp; security</dt><dd>Performance testing (JMeter) · Two-factor authentication · Internationalisation (i18n)</dd></div>
+      <div><dt>Languages</dt><dd>English (proficient)</dd></div>
+    </dl>
+  </section>
+
+  <!-- ================= DOMAIN KNOWLEDGE ================= -->
+  <section id="domains" aria-labelledby="domains-h">
+    <div class="section-head">
+      <h2 id="domains-h">Domain knowledge</h2>
+    </div>
+    <dl class="skills">
+      <div><dt>Logistics automation</dt><dd>Warehouse management (WMS) and control (WCS) software · AutoStore · AGV · Conveyors and layer picking · Telegram communication between warehouse systems</dd></div>
+      <div><dt>Aviation</dt><dd>Flight-operations web tools: navigation charts, trip kits and en-route data</dd></div>
+      <div><dt>Insurance</dt><dd>Point-of-sale platforms for insurance contracts, products and users</dd></div>
+      <div><dt>AI applications</dt><dd>Multi-model LLM orchestration · Grounded search · Source scoring (see <a href="#p-llmcouncil">LLM Council</a>)</dd></div>
+    </dl>
+  </section>
+
   <!-- ================= CAREER ================= -->
   <section id="career" aria-labelledby="career-h">
     <div class="section-head">
@@ -367,47 +401,54 @@ footer .mono { font-family: var(--font-mono); }
         <p class="role-when">2023 — Present</p>
         <h3>Technical Lead</h3>
         <p class="org">Swisslog Logistics Automation</p>
+        <p class="role-desc">Technical leadership for warehouse automation software delivered to customers in Europe and the Middle East.</p>
         <ul>
-          <li>Supervise engineers beyond the project teams: manage their capacity and guide their career paths. The team was 4–6 people at the start of the role and is 3 people in 2026.</li>
-          <li>Lead projects and technical implementation in line with Swisslog standards; own documentation, planning and proofs of concept, and mentor engineers.</li>
-          <li>Solution architect and lead for the Telegram Converter: took it from concept to delivery after lessons from Krka, designed its core structure and strategies on Swisslog's WMS architecture, and applied it successfully at Krka, ASKO and JLR.</li>
-          <li>2026: managed Oman Library end to end with three engineers through factory acceptance testing, managed four change orders for Mai Dubai and the Telegram Converter integration at JLR (UK) and ASKO (Sweden), and led urgent support that resolved Dfyne's (UK) critical production issues.</li>
-          <li>2023–2025: main developer on Krka's AGV systems (Slovenia) and Rynkeby's zero-downtime upgrade with Layer Picking (Sweden / Denmark).</li>
+          <li>Lead solution design and technical implementation to company standards, from requirements and planning through factory acceptance testing and go-live.</li>
+          <li>Design integration components as solution architect, including a telegram converter service that bridges old and new communication protocols.</li>
+          <li>Manage customer projects and change orders, and handle escalated production support.</li>
+          <li>Supervise a team of 3–6 engineers, managing capacity, mentoring and career development.</li>
         </ul>
+        <p class="role-tech"><span>Tech stack</span>Java · Spring Boot · Java EE (JSF) · WildFly</p>
         <div class="role-projects"><span>Projects</span><a href="#p-omanlibrary">Oman Library</a><a href="#p-jlrasko">JLR &amp; ASKO</a><a href="#p-maidubai">Mai Dubai</a><a href="#p-dfyne">Dfyne</a><a href="#p-telegram">Telegram Converter</a><a href="#p-rynkeby">Rynkeby</a><a href="#p-krka">Krka</a></div>
       </li>
       <li class="role">
         <p class="role-when">2019 — 2022</p>
         <h3>Senior Software Engineer · Full-stack</h3>
         <p class="org">Swisslog Logistics Automation</p>
+        <p class="role-desc">Full-stack development of Java EE warehouse automation software for international customers.</p>
         <ul>
-          <li>Led the Sulser project (Switzerland), building the Warehouse Control System for a logistics service provider near Zurich.</li>
-          <li>Main developer on EAO's zero-downtime migration of a 20-year-old legacy application (Switzerland).</li>
-          <li>Built features for Java EE warehouse automation applications (J2EE, JPA, JSF, EJB) and clarified requirements with clients to propose technical solutions.</li>
-          <li>Customised the base product for customers in Switzerland, Germany, Czechia and the UAE, and supported them after go-live.</li>
+          <li>Developed and customised product features across back end and user interface to customer requirements.</li>
+          <li>Clarified requirements with customers and proposed technical solutions.</li>
+          <li>Migrated legacy applications without downtime and supported customers after go-live.</li>
+          <li>Led a warehouse control system (WCS) project.</li>
         </ul>
+        <p class="role-tech"><span>Tech stack</span>Java EE (JPA, EJB, JSF) · WebLogic · WildFly · HTML/CSS</p>
         <div class="role-projects"><span>Projects</span><a href="#p-sulser">Sulser</a><a href="#p-eao">EAO</a><a href="#p-rewe">REWE</a><a href="#p-uaeu">UAE University</a><a href="#p-oppapirna">OP papírna</a></div>
       </li>
       <li class="role">
-        <p class="role-when">Aug 2017 — Dec 2018</p>
-        <h3>Senior Software Engineer · Dev Team Lead</h3>
+        <p class="role-when">2017 — 2018</p>
+        <h3>Senior Software Engineer · Development Team Lead</h3>
         <p class="org">FPT Software</p>
+        <p class="role-desc">Outsourced development of a flight-operations web portal for Jeppesen, a Boeing company.</p>
         <ul>
-          <li>Led the development team on Ground Control, an aviation portal for Jeppesen, a Boeing company.</li>
-          <li>Worked four months on-site at the client in the United States.</li>
-          <li>Built microservices with Spring and Angular, used Azure and AWS cloud services, and deployed and published web services.</li>
+          <li>Led the development team and worked with the client, including four months on site in the United States.</li>
+          <li>Developed microservices and Angular front ends with single sign-on and shared data across tools.</li>
+          <li>Deployed and published web services on Azure and AWS.</li>
         </ul>
+        <p class="role-tech"><span>Tech stack</span>Java · Spring Boot · Spring MVC · microservices · Angular 2 · Azure · AWS</p>
         <div class="role-projects"><span>Projects</span><a href="#p-groundcontrol">Ground Control</a></div>
       </li>
       <li class="role">
-        <p class="role-when">Jan 2016 — Jul 2017</p>
+        <p class="role-when">2016 — 2017</p>
         <h3>Software Engineer · Full-stack</h3>
         <p class="org">DXC Technology</p>
+        <p class="role-desc">Development of an insurance point-of-sale web platform.</p>
         <ul>
-          <li>Researched and applied frameworks, and built framework components for the team.</li>
-          <li>Developed microservices with Spring and AngularJS, including RESTful APIs, two-factor authentication and i18n.</li>
-          <li>Ran performance tests with JMeter, following a formal software development process.</li>
+          <li>Researched and applied frameworks and built shared framework components.</li>
+          <li>Developed microservices and RESTful APIs with two-factor authentication and internationalisation, integrated through an enterprise service bus.</li>
+          <li>Performance-tested services with JMeter.</li>
         </ul>
+        <p class="role-tech"><span>Tech stack</span>Java · Spring Boot · Spring MVC · MuleSoft ESB · WSO2 · Liferay · AngularJS · Angular 2</p>
         <div class="role-projects"><span>Projects</span><a href="#p-ipos">iPOS</a></div>
       </li>
     </ol>
@@ -649,24 +690,6 @@ footer .mono { font-family: var(--font-mono); }
     </div>
   </section>
 
-  <!-- ================= SKILLS ================= -->
-  <section id="skills" aria-labelledby="skills-h">
-    <div class="section-head">
-      <h2 id="skills-h">Skills</h2>
-    </div>
-    <dl class="skills">
-      <div><dt>Languages</dt><dd>Java (primary) · JavaScript · HTML &amp; CSS</dd></div>
-      <div><dt>Back-end</dt><dd>Java EE / J2EE (JPA, EJB, JSF) · Spring Boot · Spring MVC · Microservices · RESTful APIs · Node.js</dd></div>
-      <div><dt>Front-end</dt><dd>Angular · AngularJS · JSF · Bootstrap</dd></div>
-      <div><dt>Servers &amp; integration</dt><dd>WildFly · WebLogic · MuleSoft ESB · WSO2 · Liferay</dd></div>
-      <div><dt>Data &amp; cloud</dt><dd>SQL and NoSQL databases · AWS · Azure</dd></div>
-      <div><dt>Leadership</dt><dd>Solution architecture · Team supervision (3–6 engineers) · Capacity planning · Career guidance · Mentoring · End-to-end project management · Change orders · Urgent production support</dd></div>
-      <div><dt>Practices</dt><dd>OOP · MVC · Two-factor authentication · i18n · Performance testing with JMeter · Zero-downtime migration · Proofs of concept</dd></div>
-      <div><dt>Domains</dt><dd>Warehouse automation (WMS, WCS, AGV, AutoStore, layer picking, conveyors, telegram protocol conversion) · Aviation · Insurance</dd></div>
-      <div><dt>Spoken</dt><dd>English (proficient)</dd></div>
-    </dl>
-  </section>
-
   <!-- ================= EDUCATION ================= -->
   <section id="education" aria-labelledby="edu-h">
     <div class="section-head">
@@ -771,12 +794,11 @@ footer .mono { font-family: var(--font-mono); }
       <div>
         <h3 class="sub">Technical expertise</h3>
         <dl class="ind">
-          <div><dt>AI</dt><dd>AI research and integration</dd></div>
-          <div><dt>Web</dt><dd>Java, Angular, React, Node.js</dd></div>
-          <div><dt>Cloud</dt><dd>AWS, Azure, Docker</dd></div>
-          <div><dt>Mobile</dt><dd>iOS, Android, React Native</dd></div>
-          <div><dt>Data &amp; integration</dt><dd>SQL and NoSQL, CRM, IoT, payment systems</dd></div>
-          <div><dt>Design</dt><dd>UI/UX design</dd></div>
+          <div><dt>Back end</dt><dd>Java, Spring Boot, Spring Cloud, Java EE, microservices, REST APIs, Kafka</dd></div>
+          <div><dt>Front end</dt><dd>Angular, JavaScript, HTML/CSS</dd></div>
+          <div><dt>Cloud &amp; DevOps</dt><dd>AWS, Azure, Docker</dd></div>
+          <div><dt>Data &amp; integration</dt><dd>SQL and NoSQL (PostgreSQL), enterprise service bus, single sign-on, legacy migration</dd></div>
+          <div><dt>AI</dt><dd>Multi-model LLM integration (OpenAI, Gemini, local models)</dd></div>
         </dl>
       </div>
     </div>
