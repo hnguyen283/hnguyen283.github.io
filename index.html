@@ -1,256 +1,870 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - FBootstrapping Proyecto</title>
-  <link rel="stylesheet" href="./style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nguyen Dong Hung - Technical Lead in Java enterprise and warehouse automation software. Career, projects, and Well Life Solution: open to outsourcing projects.">
+<title>Nguyen Dong Hung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column for phones (the QR scan lands here); project cards carry a
+   warehouse-label strip (years, company, ISO country codes) that becomes a side column on wide screens. */
+:root {
+  --bg: #F2F5F6;
+  --surface: #FFFFFF;
+  --ink: #13232B;
+  --muted: #53646C;
+  --line: #D3DCE0;
+  --petrol: #0D5568;
+  --petrol-soft: #E2EDF0;
+  --amber: #C98A1B;
+  --nav-bg: rgba(242, 245, 246, 0.92);
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-3: clamp(2rem, 6vw, 2.75rem);
+  --step-4: clamp(2.75rem, 10vw, 4.5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D171C; --surface: #13222A; --ink: #E3EBEE; --muted: #9AABB3; --line: #263943;
+    --petrol: #6CBBCD; --petrol-soft: #17313B; --amber: #E3A847; --nav-bg: rgba(13, 23, 28, 0.9);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D171C; --surface: #13222A; --ink: #E3EBEE; --muted: #9AABB3; --line: #263943;
+  --petrol: #6CBBCD; --petrol-soft: #17313B; --amber: #E3A847; --nav-bg: rgba(13, 23, 28, 0.9);
+  color-scheme: dark;
+}
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--step-0)/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--petrol); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; border-radius: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+ul { margin: 0; }
+
+.wrap { max-width: 62rem; margin: 0 auto; padding-inline: 20px; }
+
+/* ---------- top nav ---------- */
+.topnav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topnav .wrap { display: flex; align-items: center; gap: 1rem; min-height: 3.25rem; }
+.topnav .mark {
+  font: 700 1.125rem/1 var(--font-display); letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.topnav nav { margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.topnav nav::-webkit-scrollbar { display: none; }
+.topnav nav ul { display: flex; gap: 0.25rem; list-style: none; padding: 0; }
+.topnav nav a {
+  display: block; padding: 0.375rem 0.625rem; border-radius: 4px;
+  font: 500 var(--step--1)/1 var(--font-mono); color: var(--muted); text-decoration: none; white-space: nowrap;
+}
+.topnav nav a:hover { color: var(--ink); background: var(--petrol-soft); }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 2.5rem 2rem; display: grid; gap: 1.5rem; }
+.eyebrow {
+  font: 500 var(--step--1)/1.3 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--petrol);
+}
+.hero h1 {
+  font: 700 var(--step-4)/0.95 var(--font-display); text-transform: uppercase; letter-spacing: 0.01em;
+}
+.hero .tagline { font: 500 var(--step-1)/1.4 var(--font-body); color: var(--ink); margin-top: 0.75rem; max-width: 40rem; }
+.hero .summary { color: var(--muted); max-width: 40rem; }
+
+.contact { display: grid; gap: 0.5rem; grid-template-columns: 1fr; }
+@media (min-width: 40rem) { .contact { grid-template-columns: 1fr 1fr; } }
+.contact-item {
+  display: flex; align-items: center; gap: 0.75rem; min-width: 0;
+  padding: 0.625rem 0.75rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+}
+.contact-item .k { font: 500 0.6875rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); width: 4.5rem; flex: none; }
+.contact-item .v { min-width: 0; overflow-wrap: anywhere; font-weight: 500; }
+.contact-item .v a { text-decoration: none; }
+.copy {
+  margin-left: auto; flex: none; cursor: pointer;
+  font: 500 0.75rem/1 var(--font-mono); color: var(--petrol);
+  background: var(--petrol-soft); border: 0; border-radius: 4px; padding: 0.4rem 0.55rem;
+}
+.copy:hover { filter: brightness(0.96); }
+
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); border-block: 1px solid var(--line); }
+.stat { padding: 1rem 0.75rem 0.875rem 0.875rem; min-width: 0; border-left: 1px solid var(--line); }
+.stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+.stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+@media (min-width: 46rem) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .stat:nth-child(n) { border-top: 0; border-left: 1px solid var(--line); padding-left: 0.875rem; }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+}
+.stat b { display: block; font: 700 var(--step-3)/1 var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 0.25rem; font-size: var(--step--1); color: var(--muted); line-height: 1.35; }
+
+/* ---------- sections ---------- */
+section { padding-block: 2.25rem; border-top: 1px solid var(--line); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.section-head h2 { font: 700 var(--step-3)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.02em; }
+.section-head p { font: 400 var(--step--1)/1.4 var(--font-mono); color: var(--muted); }
+
+/* ---------- career timeline ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; position: relative; display: grid; gap: 2rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 0.4375rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--line);
+}
+.role { position: relative; padding-left: 2.25rem; display: grid; gap: 0.5rem; }
+.role::before {
+  content: ""; position: absolute; left: 0; top: 0.3rem; width: 1rem; height: 1rem; border-radius: 50%;
+  background: var(--bg); border: 3px solid var(--petrol);
+}
+.role.current::before { background: var(--amber); border-color: var(--amber); }
+.role-when { font: 500 var(--step--1)/1.3 var(--font-mono); color: var(--petrol); letter-spacing: 0.02em; }
+.role h3 { font: 600 var(--step-2)/1.15 var(--font-display); letter-spacing: 0.01em; }
+.role .org { font-weight: 500; color: var(--muted); }
+.role ul { padding-left: 1.1rem; display: grid; gap: 0.3rem; max-width: 46rem; }
+.role li::marker { color: var(--amber); }
+.role-projects { display: flex; flex-wrap: wrap; gap: 0.375rem; align-items: center; margin-top: 0.25rem; }
+.role-projects span { font: 500 0.6875rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-right: 0.25rem; }
+.role-projects a {
+  font: 500 var(--step--1)/1 var(--font-body); text-decoration: none;
+  padding: 0.35rem 0.6rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+.role-projects a:hover { border-color: var(--petrol); }
+
+/* ---------- projects ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.filters button {
+  cursor: pointer; font: 500 var(--step--1)/1 var(--font-mono);
+  padding: 0.5rem 0.75rem; border-radius: 4px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.filters button[aria-pressed="true"] { background: var(--petrol); border-color: var(--petrol); color: var(--bg); }
+.filters button .n { opacity: 0.7; margin-left: 0.35rem; }
+
+.projects { display: grid; gap: 1rem; }
+.project {
+  display: grid; grid-template-columns: 1fr; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+}
+.label {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem;
+  padding: 0.75rem 1rem; background: var(--petrol-soft); border-bottom: 1px dashed var(--line);
+  font: 500 var(--step--1)/1.3 var(--font-mono); color: var(--petrol);
+}
+.label .yrs { font: 700 var(--step-2)/1 var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.label .cc { margin-left: auto; letter-spacing: 0.08em; }
+.project-main { padding: 1rem 1rem 1.125rem; display: grid; gap: 0.75rem; min-width: 0; }
+.project h3 { font: 600 var(--step-2)/1.1 var(--font-display); letter-spacing: 0.01em; }
+.client { font-size: var(--step--1); color: var(--muted); margin-top: 0.25rem; }
+.project .overview { max-width: 44rem; }
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.tags li {
+  font: 500 0.75rem/1 var(--font-mono); padding: 0.35rem 0.5rem; border-radius: 3px;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+}
+.tags li.key { border-color: var(--amber); }
+.stack { display: grid; gap: 0.375rem; margin: 0; padding-top: 0.75rem; border-top: 1px solid var(--line); }
+.stack div { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; }
+.stack dt { font: 500 0.6875rem/1.9 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.stack dd { margin: 0; font-size: 0.9375rem; min-width: 0; }
+.more { font-size: var(--step--1); }
+
+@media (min-width: 46rem) {
+  .project { grid-template-columns: 11.5rem 1fr; }
+  .label {
+    flex-direction: column; align-items: flex-start; gap: 0.375rem;
+    border-bottom: 0; border-right: 1px dashed var(--line); padding: 1.125rem 1rem;
+  }
+  .label .cc { margin-left: 0; margin-top: auto; }
+  .project-main { padding: 1.125rem 1.25rem 1.25rem; }
+}
+
+/* ---------- skills ---------- */
+.skills { display: grid; gap: 0; margin: 0; }
+.skills div { display: grid; grid-template-columns: 1fr; gap: 0.25rem; padding-block: 0.75rem; border-bottom: 1px solid var(--line); }
+.skills div:first-child { padding-top: 0; }
+.skills dt { font: 500 var(--step--1)/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--petrol); }
+.skills dd { margin: 0; min-width: 0; }
+@media (min-width: 46rem) { .skills div { grid-template-columns: 11.5rem 1fr; gap: 1.25rem; } }
+
+/* ---------- education ---------- */
+.creds { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.cred { padding: 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); display: grid; gap: 0.25rem; align-content: start; }
+.cred .when { font: 500 var(--step--1)/1.3 var(--font-mono); color: var(--petrol); }
+.cred h3 { font: 600 var(--step-1)/1.25 var(--font-body); }
+.cred p { color: var(--muted); font-size: 0.9375rem; }
+
+footer { border-top: 1px solid var(--line); padding-block: 1.5rem 3rem; color: var(--muted); font-size: var(--step--1); display: grid; gap: 0.375rem; }
+footer .mono { font-family: var(--font-mono); }
+
+/* ---------- availability + personal project + work with me ---------- */
+.avail {
+  display: inline-flex; align-items: center; gap: 0.5rem; justify-self: start;
+  padding: 0.45rem 0.8rem; border: 1px solid var(--amber); border-radius: 999px; background: var(--surface);
+  font: 500 var(--step--1)/1.2 var(--font-mono); color: var(--ink); text-decoration: none;
+}
+.avail::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--amber); flex: none; }
+.avail:hover { background: var(--petrol-soft); }
+.wl-intro { display: grid; gap: 0.5rem; margin-bottom: 1.25rem; max-width: 46rem; }
+.wl-intro h3, .model h3, .cta h3 { font: 600 var(--step-2)/1.15 var(--font-display); letter-spacing: 0.01em; }
+.wl-intro p, .model p:last-child, .cta p { color: var(--muted); }
+.work-lede { max-width: 46rem; margin-bottom: 1.25rem; }
+.models { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-bottom: 2rem; }
+.model { padding: 1.125rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); display: grid; gap: 0.4rem; align-content: start; }
+.model-tag { font: 500 var(--step--1)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--petrol); }
+.work-grid { display: grid; gap: 1.75rem 2.5rem; grid-template-columns: 1fr; margin-bottom: 2rem; }
+.work-grid > div { min-width: 0; }
+.sub { font: 500 var(--step--1)/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--petrol); margin-bottom: 0.5rem; }
+.ind { margin: 0; display: grid; }
+.ind div { display: grid; grid-template-columns: 9rem 1fr; gap: 0.75rem; padding-block: 0.55rem; border-bottom: 1px solid var(--line); }
+.ind dt { font-weight: 600; }
+.ind dd { margin: 0; color: var(--muted); min-width: 0; }
+.values { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.values li { padding: 0.45rem 0.7rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); font-size: 0.9375rem; }
+.cta { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--petrol); border-radius: 6px; background: var(--petrol-soft); }
+.cta p { margin-top: 0.35rem; }
+.cta-contact { display: grid; gap: 0.5rem; min-width: 0; }
+@media (min-width: 46rem) {
+  .models, .work-grid { grid-template-columns: 1fr 1fr; }
+  .cta { grid-template-columns: 1fr 1fr; align-items: center; padding: 1.5rem; }
+}
+
+/* ---------- introduction video ---------- */
+.video-link {
+  display: flex; align-items: center; gap: 0.875rem; min-width: 0;
+  padding: 0.75rem 0.875rem; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg); color: var(--ink); text-decoration: none;
+}
+.video-link:hover { border-color: var(--petrol); }
+.play { flex: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--petrol); position: relative; }
+.play::after {
+  content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%);
+  border-style: solid; border-width: 0.45rem 0 0.45rem 0.75rem; border-color: transparent transparent transparent var(--bg);
+}
+.video-text { display: grid; gap: 0.15rem; min-width: 0; }
+.video-title { font-weight: 600; }
+.video-meta { font: 500 0.75rem/1.2 var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.video-embed { position: relative; aspect-ratio: 16 / 9; width: 100%; max-width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- LLM Council research run ---------- */
+.run { display: grid; gap: 0.5rem; }
+.run-h { font: 500 0.6875rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.pipeline { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.375rem; counter-reset: step; }
+.pipeline li {
+  counter-increment: step; display: inline-flex; align-items: baseline; gap: 0.4rem;
+  padding: 0.4rem 0.6rem; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); font-size: 0.875rem;
+}
+.pipeline li::before { content: counter(step); font: 500 0.6875rem/1 var(--font-mono); color: var(--amber); }
+.pipeline li b { font-weight: 600; }
+.pipeline li span { font: 500 0.6875rem/1 var(--font-mono); color: var(--muted); }
+#p-llmcouncil .stack div { grid-template-columns: 6.5rem 1fr; }
+
+/* ---------- click-to-play video (hosted page) ---------- */
+.yt-facade {
+  position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer;
+  display: grid; place-items: center; background: var(--petrol-soft); color: var(--ink); font: inherit;
+}
+.yt-facade img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.yt-play { position: relative; width: 4rem; height: 4rem; border-radius: 50%; background: var(--petrol); }
+.yt-play::after {
+  content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%);
+  border-style: solid; border-width: 0.7rem 0 0.7rem 1.15rem; border-color: transparent transparent transparent var(--bg);
+}
+.yt-caption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 0.9rem; text-align: left; font-weight: 600;
+  color: #fff; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+.yt-facade:hover .yt-play { filter: brightness(1.1); }
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<html lang="en">
 
-  <head>
-      <meta charset="UTF-8" />
-      <meta name ="viewport" content="width = device-width, initial-scale = 1" >
-      <title>Bootcamp / CV</title>
-      <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans" />
-      <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
-          crossorigin="anonymous" />
-      <!-- <link rel="stylesheet" href="style.css" /> -->
-      <link rel="shortcut icon" href="./favicon.ico">
-  </head>
 
-<body> 
-    <div class="background gradient">
-      <!-- Delete if animation
-        <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+<div class="topnav">
+  <div class="wrap">
+    <a class="mark" href="#top">N. D. Hung</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#welllife">Well Life</a></li>
+        <li><a href="#work">Work with me</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Technical Lead · Swisslog Logistics Automation</p>
+      <h1>Nguyen Dong Hung</h1>
+      <p class="tagline">Java enterprise engineer building warehouse automation software for clients across Europe and the Middle East.</p>
+    </div>
+    <p class="summary">Software engineer since 2016, at Swisslog since 2019 and Technical Lead since 2023. I run warehouse automation projects end to end, from requirements, technical design and change orders through go-live and urgent production support, and I supervise a team of engineers, managing their capacity and guiding their careers. As solution architect and lead, I took the Telegram Converter from concept to delivery at three customer sites; I also managed an AutoStore library in Oman on Swisslog's newest Spring Boot WMS through factory acceptance testing.</p>
+
+    <a class="avail" href="#work">Open to outsourcing projects</a>
+
+    <div class="contact" id="contact">
+      <div class="contact-item">
+        <span class="k">Email</span>
+        <span class="v" id="email-text">hungnguyendong0812@gmail.com</span>
+        <button class="copy" type="button" data-copy="email-text" aria-label="Copy email address">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">Phone</span>
+        <span class="v" id="phone-text">+84 343 991 604</span>
+        <button class="copy" type="button" data-copy="phone-text" aria-label="Copy phone number">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">LinkedIn</span>
+        <span class="v"><a href="https://www.linkedin.com/in/hungnguyend/" target="_blank" rel="noopener">linkedin.com/in/hungnguyend</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="k">Based in</span>
+        <span class="v">Ho Chi Minh City, Vietnam</span>
+      </div>
+    </div>
+
+    <div class="stats" aria-label="Career at a glance">
+      <div class="stat"><b>10+</b><span>years of Java development</span></div>
+      <div class="stat"><b>14</b><span>major projects</span></div>
+      <div class="stat"><b>12</b><span>client countries</span></div>
+      <div class="stat"><b>3–6</b><span>engineers supervised</span></div>
+    </div>
+  </header>
+
+  <!-- ================= CAREER ================= -->
+  <section id="career" aria-labelledby="career-h">
+    <div class="section-head">
+      <h2 id="career-h">Career path</h2>
+      <p>2016 → today</p>
+    </div>
+    <ol class="timeline">
+      <li class="role current">
+        <p class="role-when">2023 — Present</p>
+        <h3>Technical Lead</h3>
+        <p class="org">Swisslog Logistics Automation</p>
+        <ul>
+          <li>Supervise engineers beyond the project teams: manage their capacity and guide their career paths. The team was 4–6 people at the start of the role and is 3 people in 2026.</li>
+          <li>Lead projects and technical implementation in line with Swisslog standards; own documentation, planning and proofs of concept, and mentor engineers.</li>
+          <li>Solution architect and lead for the Telegram Converter: took it from concept to delivery after lessons from Krka, designed its core structure and strategies on Swisslog's WMS architecture, and applied it successfully at Krka, ASKO and JLR.</li>
+          <li>2026: managed Oman Library end to end with three engineers through factory acceptance testing, managed four change orders for Mai Dubai and the Telegram Converter integration at JLR (UK) and ASKO (Sweden), and led urgent support that resolved Defyne's (UK) critical production issues.</li>
+          <li>2023–2025: main developer on Krka's AGV systems (Slovenia) and Rynkeby's zero-downtime upgrade with Layer Picking (Sweden / Denmark).</li>
         </ul>
-      -->
+        <div class="role-projects"><span>Projects</span><a href="#p-omanlibrary">Oman Library</a><a href="#p-jlrasko">JLR &amp; ASKO</a><a href="#p-maidubai">Mai Dubai</a><a href="#p-defyne">Defyne</a><a href="#p-telegram">Telegram Converter</a><a href="#p-rynkeby">Rynkeby</a><a href="#p-krka">Krka</a></div>
+      </li>
+      <li class="role">
+        <p class="role-when">2019 — 2022</p>
+        <h3>Senior Software Engineer · Full-stack</h3>
+        <p class="org">Swisslog Logistics Automation</p>
+        <ul>
+          <li>Led the Sulser project (Switzerland), building the Warehouse Control System for a logistics service provider near Zurich.</li>
+          <li>Main developer on EAO's zero-downtime migration of a 20-year-old legacy application (Switzerland).</li>
+          <li>Built features for Java EE warehouse automation applications (J2EE, JPA, JSF, EJB) and clarified requirements with clients to propose technical solutions.</li>
+          <li>Customised the base product for customers in Switzerland, Germany, Czechia and the UAE, and supported them after go-live.</li>
+        </ul>
+        <div class="role-projects"><span>Projects</span><a href="#p-sulser">Sulser</a><a href="#p-eao">EAO</a><a href="#p-rewe">REWE</a><a href="#p-uaeu">UAE University</a><a href="#p-oppapirna">OP papírna</a></div>
+      </li>
+      <li class="role">
+        <p class="role-when">Aug 2017 — Dec 2018</p>
+        <h3>Senior Software Engineer · Dev Team Lead</h3>
+        <p class="org">FPT Software</p>
+        <ul>
+          <li>Led the development team on Ground Control, an aviation portal for Jeppesen, a Boeing company.</li>
+          <li>Worked four months on-site at the client in the United States.</li>
+          <li>Built microservices with Spring and Angular, used Azure and AWS cloud services, and deployed and published web services.</li>
+        </ul>
+        <div class="role-projects"><span>Projects</span><a href="#p-groundcontrol">Ground Control</a></div>
+      </li>
+      <li class="role">
+        <p class="role-when">Jan 2016 — Jul 2017</p>
+        <h3>Software Engineer · Full-stack</h3>
+        <p class="org">DXC Technology</p>
+        <ul>
+          <li>Researched and applied frameworks, and built framework components for the team.</li>
+          <li>Developed microservices with Spring and AngularJS, including RESTful APIs, two-factor authentication and i18n.</li>
+          <li>Ran performance tests with JMeter, following a formal software development process.</li>
+        </ul>
+        <div class="role-projects"><span>Projects</span><a href="#p-ipos">iPOS</a></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="section-head">
+      <h2 id="projects-h">Projects</h2>
+      <p>Newest year first</p>
     </div>
-    <div class="page">
-        <header>
-            <nav>
-                <a href="#about" class="selected" id='getAbout'>
-                    <span class="fas fa-user"></span>
-                    <span class="link">About</span>
-                </a>
-                <a href="#resume" id='getResume'>
-                    <span class="fas fa-file"></span>
-                    <span class="link">Resume</span>
-                </a>
-                <a href="#contact" id='getContact'>
-                    <span class="fas fa-at"></span>
-                    <span class="link">Contact</span>
-                </a>
-            </nav>
-        </header>
-        <main>
-            <section id="presentation" class="profile">
-                <div class="profile-background"></div>
-                <div>
-                    <div class="profile-image">
-                        <img src="images/avatar.jpg"  alt="Hung Nguyen">
-                    </div>
-                    <h1 class="profile-name" id="nombre">Hung D Nguyen</h1>
-                    <h2 class="profile-profession">Java Software Engineer</h2>
-                    <div class="profile-social" id="profile-social">
-                        <a href="https://www.linkedin.com/in/hungnguyend/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/hnguyen283" class="fab fa-github"></a>
-                    </div>
-                </div>
-                <div class="profile-buttons">
-                    <a href="https://www.linkedin.com/ambry/?x-li-ambry-ep=AQKN8GDCcMrcsQAAAZApsP06W5CIaVs7PW7Zw2GjdujwAseT-_uLC9BYRiZeJ_c65nZCfS5e3RUfNnYhe42zSidhadfzxSnxJd1cxMxBugKSpti8zNc8uRZ3hzO8fxtYE41Gd7zY_tD6_H-AarTkkLNT3UHl7cnc0k5njYRsQZxzoO6C7_bHrmA6D192k1o_ha7H5NGPaaem8whv16rQ7EtZNlsujNfmPRooKbgp0yzzKKCPda8lueHQroyLe9a2SXjjQgXVwvs_Fo7-EymKWIdt3bd3gWKFt8-Ss_UDMT_PfH3_UW3uee-wmmCydAgfqT9Fssa3waEr2jtfNcc3tYW9_EGag2756dvs2K0Iuc0C0cL14TQe7CV0GAYpAr_wu8v62nJcx-GPRhowme5CvAx8iFAYrfEnS3VeK1LfTa10ldicgQZRc2t5xJbLtWSRkKduX6Ua_70DeC24xddac8rraXFEwPbX0JDBgz8jqvJ1mcBQmOy7brPyl6OEW7CbKgrUC_LeWck5d_tsWNledOr_R7BekqzVr38P676DJqy-NFA3Oxhedc7zFHgh4ubxwoVvDA&x-ambry-um-filename=Profile.pdf" download>DOWNLOAD CV <i class="fas fa-download"></i></a>
-                    <a href="https://www.linkedin.com/in/hungnguyend/">CONTACT ME <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </section>
-            <section id="about" class="about view">
-                <article class="about-aboutMe">
-                    <h3 class="title">About Me</h3>
-                    <div class="line-left">
-                        <p>As an experienced technical lead proficient in Java, Microservices, OOP, MVC, and cloud platforms like AWS and MS Azure.</p>
-                        <p>I have a proven track record of leading cross-functional teams to deliver innovative solutions. With strong Java skills, I tackle complex coding challenges and architect scalable systems.</p> 
-                        <p>As a passionate leader, I empower teams to excel and foster a culture of continuous learning.</p>
-                        <p>I am excited to bring my technical leadership skills to your organization and contribute to its success.</p>
-                        <div>
-                            <div>
-                                <span>BORN . . . . </span>1994
-                            </div>
-                            <div>
-                                <span>RESIDENCE . . . . </span>Vietnam
-                            </div>
-                            <div>
-                                <span>ADDRESS . . . . </span>HCMC, Vietnam
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="about-services">
-                    <h3 class="title">My Services</h3>
-                    <div class="line-left">
-                        <article class="line-down">
-                            <div class="fas fa-code"></div>
-                            <h4>WEB DEVELOPMENT</h4>
-                            <p>Modern and mobile-ready website that will help you reach all of your marketing.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="fas fa-music"></div>
-                            <h4>MUSIC WRITING</h4>
-                            <p>Music copying, transcription, arranging and composition services.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-bullhorn"></div>
-                            <h4>ADVETISING</h4>
-                            <p>Advertising services include television, radio, print, mail and web.</p>
-                        </article>
-                        <article>
-                            <div class="fas fa-gamepad"></div>
-                            <h4>GAME DEVELOPMENT</h4>
-                            <p>Developing memorable and unique mobile android, ios games.</p>
-                        </article>
-                    </div>
-                </article>
-            </section>
-            <section id="resume" class="resume">
-                <h3 class="title">Resume</h3>
-                <article class="resume-lines">
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-briefcase"></i> Experience</h4>
-                        <article class="line-down">
-                            <div class="date active">2013 - PRESENT</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">FACEBOOK INC.</h6>
-                            <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2011 - 2012</div>
-                            <h5 class="name">FRONT-END DEVELOPER</h5>
-                            <h6 class="company">GOOGLE INC.</h6>
-                            <p>Monitored technical aspects of the front-end delivery for several projects.</p>
-                        </article>
-                        <article>
-                            <div class="date">2009 - 2010</div>
-                            <h5 class="name">SENIOR DEVELOPER</h5>
-                            <h6 class="company">ABC INC.</h6>
-                            <p>Optimize website performance using latest technology.</p>
-                        </article>
-                    </section>
-                    <section class="resume-line line-left">
-                        <h4 class="line-down"> <i class="fas fa-university"></i> Education</h4>
-                        <article class="line-down">
-                            <div class="date">2006 - 2008</div>
-                            <h5 class="name">ART DIRECTOR</h5>
-                            <h6 class="company">NEW YORK</h6>
-                            <p>Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
-                        </article>
-                        <article class="line-down">
-                            <div class="date">2005 - 2006</div>
-                            <h5 class="name">PROGRAMMING COURSE</h5>
-                            <h6 class="company">PARIS</h6>
-                            <p>Coursework - Git, WordPress, Javascript, iOS, Android.</p>
-                        </article>
-                        <article>
-                            <div class="date">2004 - 2005</div>
-                            <h5 class="name">WEB DESIGN COURSE</h5>
-                            <h6 class="company">LONDON</h6>
-                            <p>Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript.</p>
-                        </article>
-                    </section>
-                </article>
-                <article class="resume-skills">
-                    <h3 class="title">My Skills</h3>
-                    <div>
-                        <section class="line-left">
-                            <h4 class="line-down"> <i class="fas fa-code"></i> HARD</h4>
-                            <div class="line-down">
-                                <div>Java</div>
-                                <div>
-                                    <div style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>JavaScript</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>Cloud(Azure, AWS)</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>                            
-                            <div class="line-down">
-                                <div>Database</div>
-                                <div>
-                                    <div style="width: 50%"></div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="line-left">
-                            <h4 class="line-down"><i class="fas fa-tasks"></i> SOFT</h4>
-                            <div class="line-down">
-                                <div>Commitment</div>
-                                <div>
-                                    <div style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Leadership</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="line-down">
-                                <div>Time-Management</div>
-                                <div>
-                                    <div style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div>English</div>
-                                <div>
-                                    <div style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </article>
-            </section>
-            <section id="contact" class="contact">
-              <h3 class="title">Get in Touch</h3>
-              <div class="contact-information line-left">
-                <div>
-                  <span>ADDRESS . . . . </span> HCMC, Vietnam
-                </div>
-                <div>
-                  <span>EMAIL . . . . </span> hungnguyendong0812@gmail.com.vn
-                </div>
-                <div>
-                  <span>PHONE . . . . </span> +84 343 991604
-                </div>
-              </div>
-            </section>
-        </main>
+    <div class="filters" role="group" aria-label="Filter projects by company">
+      <button type="button" id="f-all" data-filter="all" aria-pressed="true">All<span class="n">14</span></button>
+      <button type="button" id="f-swisslog" data-filter="swisslog" aria-pressed="false">Swisslog<span class="n">12</span></button>
+      <button type="button" id="f-fpt" data-filter="fpt" aria-pressed="false">FPT Software<span class="n">1</span></button>
+      <button type="button" id="f-dxc" data-filter="dxc" aria-pressed="false">DXC Technology<span class="n">1</span></button>
     </div>
 
-</body>
+    <div class="projects">
+      <article class="project" id="p-omanlibrary" data-company="swisslog">
+        <div class="label"><span class="yrs">2026</span><span>Swisslog</span><span class="cc">OM</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Oman Library</h3>
+            <p class="client">Client: Oman Library · Oman · Role: end-to-end project lead</p>
+          </div>
+          <p class="overview">Managed the project end to end with a team of three engineers. The solution is an AutoStore system running on the latest version of Swisslog's warehouse management system (WMS), which is built on Spring Boot. Factory acceptance testing (FAT) is complete; integration with the real subsystems is next.</p>
+          <ul class="tags"><li class="key">End-to-end project management</li><li class="key">FAT complete</li><li>AutoStore</li><li>Team of 3 engineers</li><li>Latest WMS release</li></ul>
+          <dl class="stack">
+            <div><dt>Platform</dt><dd>Swisslog WMS (latest version)</dd></div>
+            <div><dt>Back-end</dt><dd>Java · Spring Boot</dd></div>
+          </dl>
+        </div>
+      </article>
 
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+      <article class="project" id="p-jlrasko" data-company="swisslog">
+        <div class="label"><span class="yrs">2026</span><span>Swisslog</span><span class="cc">GB · SE</span></div>
+        <div class="project-main">
+          <div>
+            <h3>JLR &amp; ASKO · Telegram Converter integration</h3>
+            <p class="client">Clients: JLR (Jaguar Land Rover) · United Kingdom, and ASKO · Sweden</p>
+          </div>
+          <p class="overview">Managed the integration of the <a href="#p-telegram">Telegram Converter</a> solution at two customer sites, JLR in the United Kingdom and ASKO in Sweden.</p>
+          <ul class="tags"><li class="key">Integration management</li><li class="key">Two customer sites</li><li>Telegram Converter</li><li>Warehouse automation</li></ul>
+        </div>
+      </article>
+
+      <article class="project" id="p-maidubai" data-company="swisslog">
+        <div class="label"><span class="yrs">2026</span><span>Swisslog</span><span class="cc">AE</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Mai Dubai</h3>
+            <p class="client">Client: Mai Dubai · Dubai, United Arab Emirates</p>
+          </div>
+          <p class="overview">Managed four change orders for Mai Dubai, which is extending its production lines and warehouse.</p>
+          <ul class="tags"><li class="key">4 change orders</li><li>Production line extension</li><li>Warehouse extension</li><li>Project management</li></ul>
+        </div>
+      </article>
+
+      <article class="project" id="p-defyne" data-company="swisslog">
+        <div class="label"><span class="yrs">2026</span><span>Swisslog</span><span class="cc">GB</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Defyne</h3>
+            <p class="client">Client: Defyne · United Kingdom · Role: urgent-support lead</p>
+          </div>
+          <p class="overview">Led urgent support on a live production system and resolved critical issues affecting performance and incorrect system behaviour.</p>
+          <ul class="tags"><li class="key">Urgent production support</li><li class="key">Issues resolved</li><li>Performance</li><li>Correctness</li></ul>
+        </div>
+      </article>
+
+      <article class="project" id="p-telegram" data-company="swisslog">
+        <div class="label"><span class="yrs">2025</span><span>Swisslog</span><span class="cc">PRODUCT</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Telegram Converter</h3>
+            <p class="client">Swisslog product solution · built late 2025 · Role: solution architect &amp; lead</p>
+          </div>
+          <p class="overview">An intermediate service that converts between new and old telegram types, the structured messages warehouse systems exchange, for both internal and external protocols. With it, customer sites can upgrade, extend or modernise their warehouse without downtime.</p>
+          <p class="overview">Started after lessons learned on the Krka project and from customer expectations. Led from concept to delivery; the core structure and strategies follow the architecture of Swisslog's WMS so that other developers can adopt it easily.</p>
+          <ul class="tags"><li class="key">Solution architecture</li><li class="key">Zero-downtime upgrades</li><li class="key">3 customer projects</li><li>Protocol conversion</li><li>Product</li></ul>
+          <p class="more">Applied successfully at <a href="#p-krka">Krka</a>, and at <a href="#p-jlrasko">ASKO and JLR</a> in 2026.</p>
+        </div>
+      </article>
+
+      <article class="project" id="p-rynkeby" data-company="swisslog">
+        <div class="label"><span class="yrs">2023–2025</span><span>Swisslog</span><span class="cc">SE · DK</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Rynkeby</h3>
+            <p class="client">Client: <a href="https://www.rynkeby.dk/" target="_blank" rel="noopener">Rynkeby</a> · Sweden / Denmark · Role: main developer</p>
+          </div>
+          <p class="overview">Updated the customer's system and migrated the legacy application to the latest version without downtime. Integrated the new Layer Picking solution, raising picking performance to 120 picks per hour.</p>
+          <ul class="tags"><li class="key">Zero-downtime migration</li><li class="key">Layer Picking · 120 picks/h</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WildFly · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-krka" data-company="swisslog">
+        <div class="label"><span class="yrs">2023–2025</span><span>Swisslog</span><span class="cc">SI</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Krka</h3>
+            <p class="client">Client: <a href="https://www.krka.biz/" target="_blank" rel="noopener">Krka</a> · Slovenia · pharmaceuticals · Role: main developer</p>
+          </div>
+          <p class="overview">Krka is a pharmaceutical company that needs a specialised automation system for its production lines and storage. Designed and implemented AGV (automated guided vehicle) systems for its specific process requirements, integrated with conveyors and automated warehouses. Lessons from this project led to the <a href="#p-telegram">Telegram Converter</a>, which was also applied here.</p>
+          <ul class="tags"><li class="key">AGV systems</li><li>Conveyor integration</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WildFly · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+          <p class="more"><a href="https://www.youtube.com/watch?v=w9m9USJVg5M" target="_blank" rel="noopener">Watch the Krka system on YouTube</a></p>
+        </div>
+      </article>
+
+      <article class="project" id="p-sulser" data-company="swisslog">
+        <div class="label"><span class="yrs">2022–2023</span><span>Swisslog</span><span class="cc">CH</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Sulser</h3>
+            <p class="client">Client: <a href="https://www.sulsergroup.ch/" target="_blank" rel="noopener">Sulser Group</a> · Switzerland · Role: project lead</p>
+          </div>
+          <p class="overview">Sulser Logistics Solutions AG, a subsidiary of the Sulser Group based near Zurich, is a logistics service provider that needed to become more flexible and respond quickly to market changes. Led the project that built its Warehouse Control System (WCS).</p>
+          <ul class="tags"><li class="key">Project lead</li><li class="key">Warehouse Control System</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WildFly · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-eao" data-company="swisslog">
+        <div class="label"><span class="yrs">2021–2022</span><span>Swisslog</span><span class="cc">CH</span></div>
+        <div class="project-main">
+          <div>
+            <h3>EAO</h3>
+            <p class="client">Client: <a href="https://eao.com/" target="_blank" rel="noopener">EAO</a> · Switzerland · strategic partner · Role: main developer</p>
+          </div>
+          <p class="overview">EAO, one of Swisslog's strategic partners, ran a legacy application built 20 years earlier. Updated the system and migrated the legacy application to the latest version without downtime.</p>
+          <ul class="tags"><li class="key">Zero-downtime migration</li><li>20-year-old legacy system</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WebLogic · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-rewe" data-company="swisslog">
+        <div class="label"><span class="yrs">2020–2021</span><span>Swisslog</span><span class="cc">DE</span></div>
+        <div class="project-main">
+          <div>
+            <h3>REWE</h3>
+            <p class="client">Client: <a href="https://www.rewe.de/" target="_blank" rel="noopener">REWE</a> · Germany</p>
+          </div>
+          <p class="overview">Customised the base product to meet REWE's requirements and supported the client after the implementation phase.</p>
+          <ul class="tags"><li class="key">Product customisation</li><li>Post-go-live support</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WebLogic · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-uaeu" data-company="swisslog">
+        <div class="label"><span class="yrs">2019–2020</span><span>Swisslog</span><span class="cc">AE</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Bibliotheca · UAE University</h3>
+            <p class="client">Client: <a href="https://www.uaeu.ac.ae/en/" target="_blank" rel="noopener">UAE University</a> · United Arab Emirates</p>
+          </div>
+          <p class="overview">Delivered an AutoStore solution for the UAE University library, turning manual book borrowing and returns into a robot-operated process. Customised the base product to the requirements and supported the client after the implementation phase.</p>
+          <ul class="tags"><li class="key">AutoStore robotics</li><li>Library automation</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WebLogic · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-oppapirna" data-company="swisslog">
+        <div class="label"><span class="yrs">2019–2020</span><span>Swisslog</span><span class="cc">CZ</span></div>
+        <div class="project-main">
+          <div>
+            <h3>OP papírna</h3>
+            <p class="client">Client: OP papírna · Czechia · paper manufacturing</p>
+          </div>
+          <p class="overview">Automated the transport and storage of paper rolls in OP papírna's factory using robots and conveyors. Customised the base product to the requirements and supported the client after the implementation phase.</p>
+          <ul class="tags"><li class="key">Robots &amp; conveyors</li><li>Factory automation</li><li>Warehouse automation</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Java EE · WebLogic · monolith</dd></div>
+            <div><dt>Front-end</dt><dd>JSF · HTML · CSS</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-groundcontrol" data-company="fpt">
+        <div class="label"><span class="yrs">2017–2018</span><span>FPT Software</span><span class="cc">US</span></div>
+        <div class="project-main">
+          <div>
+            <h3>Ground Control</h3>
+            <p class="client">Client: <a href="https://www.jeppesen.com/" target="_blank" rel="noopener">Jeppesen, a Boeing Company</a> · aviation</p>
+          </div>
+          <p class="overview">Ground Control combines the functions of Jeppesen's existing tools into a single, highly available website with a modern interface, single sign-on to every tool, and data shared between tools. It lets Jeppesen customers view standard Jeppesen charts, deliver customer-generated charts to their flight crews, generate trip kits and enter tailored en-route data.</p>
+          <ul class="tags"><li class="key">Team lead</li><li class="key">Single sign-on</li><li>High availability</li><li>Aviation</li><li>Outsourcing</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Spring Boot · Spring MVC · microservices</dd></div>
+            <div><dt>Front-end</dt><dd>Angular 2</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project" id="p-ipos" data-company="dxc">
+        <div class="label"><span class="yrs">2016–2017</span><span>DXC Technology</span><span class="cc">SG · LA</span></div>
+        <div class="project-main">
+          <div>
+            <h3>iPOS · The Integral Point of Sale</h3>
+            <p class="client">Clients: <a href="https://www.aviva.com.sg/" target="_blank" rel="noopener">Aviva Singapore</a>, <a href="https://www.apa.com.la/" target="_blank" rel="noopener">APA Laos</a> and others · insurance</p>
+          </div>
+          <p class="overview">A flexible web application for selling insurance. Sellers use it to create insurance contracts and to manage contracts, products and users.</p>
+          <ul class="tags"><li class="key">Microservices</li><li>Enterprise service bus</li><li>Insurance</li><li>Production</li></ul>
+          <dl class="stack">
+            <div><dt>Language</dt><dd>Java</dd></div>
+            <div><dt>Back-end</dt><dd>Spring Boot · Spring MVC · MuleSoft ESB · WSO2 · Liferay · microservices</dd></div>
+            <div><dt>Front-end</dt><dd>AngularJS · Angular 2</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="section-head">
+      <h2 id="skills-h">Skills</h2>
+    </div>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd>Java (primary) · JavaScript · HTML &amp; CSS</dd></div>
+      <div><dt>Back-end</dt><dd>Java EE / J2EE (JPA, EJB, JSF) · Spring Boot · Spring MVC · Microservices · RESTful APIs · Node.js</dd></div>
+      <div><dt>Front-end</dt><dd>Angular · AngularJS · JSF · Bootstrap</dd></div>
+      <div><dt>Servers &amp; integration</dt><dd>WildFly · WebLogic · MuleSoft ESB · WSO2 · Liferay</dd></div>
+      <div><dt>Data &amp; cloud</dt><dd>SQL and NoSQL databases · AWS · Azure</dd></div>
+      <div><dt>Leadership</dt><dd>Solution architecture · Team supervision (3–6 engineers) · Capacity planning · Career guidance · Mentoring · End-to-end project management · Change orders · Urgent production support</dd></div>
+      <div><dt>Practices</dt><dd>OOP · MVC · Two-factor authentication · i18n · Performance testing with JMeter · Zero-downtime migration · Proofs of concept</dd></div>
+      <div><dt>Domains</dt><dd>Warehouse automation (WMS, WCS, AGV, AutoStore, layer picking, conveyors, telegram protocol conversion) · Aviation · Insurance</dd></div>
+      <div><dt>Spoken</dt><dd>English (proficient)</dd></div>
+    </dl>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" aria-labelledby="edu-h">
+    <div class="section-head">
+      <h2 id="edu-h">Education &amp; certification</h2>
+    </div>
+    <div class="creds">
+      <div class="cred">
+        <p class="when">2012 — 2016</p>
+        <h3>Bachelor of Engineering, Information Technology</h3>
+        <p>Nong Lam University, Ho Chi Minh City · main programming language: Java</p>
+      </div>
+      <div class="cred">
+        <p class="when">2021 — 2024</p>
+        <h3>AWS Certified Solutions Architect – Associate (SAA-C02)</h3>
+        <p>Issued September 2021 · credential ID <span style="font-family: var(--font-mono)">8HX1S0BBEMRQ12KP</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PERSONAL PROJECT ================= -->
+  <section id="welllife" aria-labelledby="welllife-h">
+    <div class="section-head">
+      <h2 id="welllife-h">Personal project</h2>
+      <p>welllifeapp.com</p>
+    </div>
+    <div class="wl-intro">
+      <h3>Well Life Solution</h3>
+      <p>Well Life Solution is my personal project: an independent software practice that builds custom software for clients in the EU and the US, with a focus on finance, warehouse management, startups and SMEs. It is also where I design and run my own products.</p>
+    </div>
+    <article class="project product" id="p-llmcouncil">
+      <div class="label"><span class="yrs">Live</span><span>Well Life</span><span class="cc">PRODUCT</span></div>
+      <div class="project-main">
+        <div>
+          <h3>LLM Council</h3>
+          <p class="client">AI research orchestrator · <a href="https://llm.welllifeapp.com" target="_blank" rel="noopener">llm.welllifeapp.com</a> · Role: creator &amp; architect</p>
+        </div>
+        <p class="overview">LLM Council runs a panel of AI models against a research question and adjudicates the result. Gemini collects evidence through grounded search; GPT analyses it, debates the weakest claims and scores every source; a deterministic judge written in Java turns those scores into source tiers and an overall confidence band before a short, direct answer is written. The aim is AI answers people can trust, without depending on a single model, vendor or prompt.</p>
+        <div class="run">
+          <p class="run-h">How a research run works</p>
+          <ol class="pipeline">
+            <li><b>Plan</b><span>local AI</span></li>
+            <li><b>Collect</b><span>Gemini</span></li>
+            <li><b>Validate</b><span>3+ domains</span></li>
+            <li><b>Analyse</b><span>GPT</span></li>
+            <li><b>Debate</b><span>GPT</span></li>
+            <li><b>Score</b><span>0–100 per source</span></li>
+            <li><b>Judge</b><span>Java</span></li>
+            <li><b>Answer</b><span>GPT</span></li>
+          </ol>
+        </div>
+        <ul class="tags"><li class="key">Multi-model research panel</li><li class="key">Own architecture</li><li>Source scoring</li><li>Confidence bands</li><li>English &amp; Vietnamese</li><li>Live product</li></ul>
+        <dl class="stack">
+          <div><dt>Back-end</dt><dd>Java 21 · Spring Boot 3.3 · ten microservices · Spring Cloud Gateway · Eureka · Config Server</dd></div>
+          <div><dt>Data</dt><dd>Kafka request/reply · Valkey · PostgreSQL with pgvector and Apache AGE (GraphRAG) · gRPC</dd></div>
+          <div><dt>AI models</dt><dd>Gemini (grounded search) · OpenAI GPT (reasoning) · DeepSeek-R1 on Ollama (planning)</dd></div>
+          <div><dt>Front-end</dt><dd>Angular 18 user app and admin portal · live progress over server-sent events</dd></div>
+          <div><dt>Operations</dt><dd>Docker Compose on a single VPS · Prometheus · VictoriaLogs · Zipkin · Resilience4j</dd></div>
+        </dl>
+        <p class="more">Roadmap: trustworthy research first, then domain capability packs starting with coding and finance, then a permissioned client-side agent.</p>
+        <div class="video-embed">
+          <button type="button" class="yt-facade" data-yt="gVra057_hMk" data-title="LLM Council: The Anatomy of Trust" aria-label="Play video: LLM Council: The Anatomy of Trust">
+            <img src="https://i.ytimg.com/vi/gVra057_hMk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+            <span class="yt-play" aria-hidden="true"></span>
+            <span class="yt-caption">LLM Council: The Anatomy of Trust</span>
+          </button>
+        </div>
+        <p class="more">Introduction video: <a href="https://youtu.be/gVra057_hMk" target="_blank" rel="noopener">LLM Council: The Anatomy of Trust</a> on YouTube</p>
+        <p class="more"><a href="https://llm.welllifeapp.com" target="_blank" rel="noopener">Open LLM Council</a></p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= WORK WITH ME ================= -->
+  <section id="work" aria-labelledby="work-h">
+    <div class="section-head">
+      <h2 id="work-h">Work with me</h2>
+      <p>Open to outsourcing projects</p>
+    </div>
+    <p class="work-lede">Besides my full-time role, I take on outsourcing projects through Well Life Solution for clients in the EU and the US. Pick the engagement model that fits how your team works.</p>
+    <div class="models">
+      <div class="model">
+        <p class="model-tag">Option A</p>
+        <h3>All-in-one project delivery</h3>
+        <p>End-to-end delivery with managed timelines, a fixed budget, milestone demos and post-launch support.</p>
+      </div>
+      <div class="model">
+        <p class="model-tag">Option B</p>
+        <h3>Dedicated outsourcing</h3>
+        <p>Developers who join your team on a flexible, time-based model and work under your leadership.</p>
+      </div>
+    </div>
+    <div class="work-grid">
+      <div>
+        <h3 class="sub">Industries</h3>
+        <dl class="ind">
+          <div><dt>Finance</dt><dd>Fintech apps and compliance-focused systems</dd></div>
+          <div><dt>Warehouse management</dt><dd>Inventory and logistics tools</dd></div>
+          <div><dt>Startups</dt><dd>MVPs and scalable cloud products</dd></div>
+          <div><dt>SMEs</dt><dd>Workflow automation, customer portals and custom tools</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3 class="sub">Technical expertise</h3>
+        <dl class="ind">
+          <div><dt>AI</dt><dd>AI research and integration</dd></div>
+          <div><dt>Web</dt><dd>Java, Angular, React, Node.js</dd></div>
+          <div><dt>Cloud</dt><dd>AWS, Azure, Docker</dd></div>
+          <div><dt>Mobile</dt><dd>iOS, Android, React Native</dd></div>
+          <div><dt>Data &amp; integration</dt><dd>SQL and NoSQL, CRM, IoT, payment systems</dd></div>
+          <div><dt>Design</dt><dd>UI/UX design</dd></div>
+        </dl>
+      </div>
+    </div>
+    <h3 class="sub">Working principles</h3>
+    <ul class="values"><li>Experienced engineers</li><li>Close client collaboration</li><li>Quality assurance and secure development</li><li>Agile delivery</li><li>Support across the full lifecycle</li></ul>
+    <div class="cta">
+      <div>
+        <h3>Have a project in mind?</h3>
+        <p>Send a short description of what you need, your timeline and the engagement model you prefer.</p>
+      </div>
+      <div class="cta-contact">
+        <div class="contact-item">
+          <span class="k">Email</span>
+          <span class="v" id="cta-email">hungnguyendong0812@gmail.com</span>
+          <button class="copy" type="button" data-copy="cta-email" aria-label="Copy email address">Copy</button>
+        </div>
+        <div class="contact-item">
+          <span class="k">LinkedIn</span>
+          <span class="v"><a href="https://www.linkedin.com/in/hungnguyend/" target="_blank" rel="noopener">linkedin.com/in/hungnguyend</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>References available on request. Interests: reading, music, photography.</p>
+    <p>Well Life Solution · <a href="https://welllifeapp.com">welllifeapp.com</a></p>
+    <p class="mono">Updated October 2026</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  // Project filter
+  var buttons = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('.projects .project');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-company') === f); });
+    });
+  });
+
+  // Jumping to a project from the career timeline always shows it, even if a filter hid it
+  document.querySelectorAll('.role-projects a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target && target.hidden) {
+        document.getElementById('f-all').click();
+      }
+    });
+  });
+
+  // Copy buttons
+  function selectText(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      var text = el.textContent.trim();
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      var fail = function () { selectText(el); btn.textContent = 'Selected'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, fail);
+        } else { fail(); }
+      } catch (e) { fail(); }
+    });
+  });
+  // Click-to-play video: load the YouTube player only when asked
+  document.querySelectorAll('.yt-facade').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('data-title');
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      btn.replaceWith(f);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
