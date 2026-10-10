@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Nguyen Dong Hung - Technical Lead and Java engineer delivering enterprise systems in insurance, aviation and logistics. Career, projects, and Well Life Solution: open to outsourcing projects.">
-<title>Nguyen Dong Hung</title>
+<meta name="description" content="Portfolio of Nguyen Dong Hung, Technical Lead in Java enterprise systems: skills, domain knowledge, career, projects and the LLM Council research project.">
+<title>Nguyen Dong Hung · Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -315,8 +315,7 @@ footer .mono { font-family: var(--font-mono); }
         <li><a href="#skills">Skills</a></li>
         <li><a href="#career">Career</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#welllife">Well Life</a></li>
-        <li><a href="#work">Work with me</a></li>
+        <li><a href="#research">Research</a></li>
       </ul>
     </nav>
   </div>
@@ -330,8 +329,6 @@ footer .mono { font-family: var(--font-mono); }
       <p class="tagline">Technical Lead with over ten years of enterprise software development, mainly in Java and Spring, across insurance, aviation and logistics automation.</p>
     </div>
     <p class="summary">I am experienced in full-stack development, system integration, legacy modernisation and solution design, and in leading development teams that work with customers across Europe, Asia, the Middle East and the US. In my own time I build AI-powered applications.</p>
-
-    <a class="avail" href="#work">Open to outsourcing projects</a>
 
     <div class="contact" id="contact">
       <div class="contact-item">
@@ -709,24 +706,21 @@ footer .mono { font-family: var(--font-mono); }
     </div>
   </section>
 
-  <!-- ================= PERSONAL PROJECT ================= -->
-  <section id="welllife" aria-labelledby="welllife-h">
+  <!-- ================= RESEARCH PROJECT ================= -->
+  <section id="research" aria-labelledby="research-h">
     <div class="section-head">
-      <h2 id="welllife-h">Personal project</h2>
-      <p>welllifeapp.com</p>
-    </div>
-    <div class="wl-intro">
-      <h3>Well Life Solution</h3>
-      <p>Well Life Solution is my personal project: an independent software practice that builds custom software for clients in the EU and the US, with a focus on finance, warehouse management, startups and SMEs. It is also where I design and run my own products.</p>
+      <h2 id="research-h">Research project</h2>
+      <p>Personal research · 2026</p>
     </div>
     <article class="project product" id="p-llmcouncil">
-      <div class="label"><span class="yrs">Live</span><span>Well Life</span><span class="cc">PRODUCT</span></div>
+      <div class="label"><span class="yrs">2026</span><span>Personal</span><span class="cc">RESEARCH</span></div>
       <div class="project-main">
         <div>
           <h3>LLM Council</h3>
-          <p class="client">AI research orchestrator · <a href="https://llm.welllifeapp.com" target="_blank" rel="noopener">llm.welllifeapp.com</a> · Role: creator &amp; architect</p>
+          <p class="client">Personal research project · Role: architect</p>
         </div>
-        <p class="overview">LLM Council runs a panel of AI models against a research question and adjudicates the result. Gemini collects evidence through grounded search; GPT analyses it, debates the weakest claims and scores every source; a deterministic judge written in Java turns those scores into source tiers and an overall confidence band before a short, direct answer is written. The aim is AI answers people can trust, without depending on a single model, vendor or prompt.</p>
+        <p class="overview">A research project into how several AI models can check one another's work to give answers people can trust, built on an event-driven enterprise Java architecture. A panel of models works on each research question: Gemini collects evidence through grounded search; GPT analyses it, debates the weakest claims and scores every source; a deterministic judge written in Java turns those scores into source tiers and a confidence band before a short, direct answer is written.</p>
+        <p class="overview">The engineering focus is reliable orchestration. A state-machine orchestrator sends each step to AI workers over Kafka request/reply and collects the replies, with a circuit breaker per provider, timeouts, retries and graceful degradation: when a step fails, the run continues and the report is marked as degraded. Progress streams to the browser over server-sent events.</p>
         <div class="run">
           <p class="run-h">How a research run works</p>
           <ol class="pipeline">
@@ -740,7 +734,7 @@ footer .mono { font-family: var(--font-mono); }
             <li><b>Answer</b><span>GPT</span></li>
           </ol>
         </div>
-        <ul class="tags"><li class="key">Multi-model research panel</li><li class="key">Own architecture</li><li>Source scoring</li><li>Confidence bands</li><li>English &amp; Vietnamese</li><li>Live product</li></ul>
+        <ul class="tags"><li class="key">Research project</li><li class="key">Event-driven architecture</li><li>Multi-model AI</li><li>Kafka request/reply</li><li>Resilience patterns</li><li>Source scoring</li><li>English &amp; Vietnamese</li></ul>
         <dl class="stack">
           <div><dt>Back-end</dt><dd>Java 21 · Spring Boot 3.3 · ten microservices · Spring Cloud Gateway · Eureka · Config Server</dd></div>
           <div><dt>Data</dt><dd>Kafka request/reply · Valkey · PostgreSQL with pgvector and Apache AGE (GraphRAG) · gRPC</dd></div>
@@ -748,7 +742,7 @@ footer .mono { font-family: var(--font-mono); }
           <div><dt>Front-end</dt><dd>Angular 18 user app and admin portal · live progress over server-sent events</dd></div>
           <div><dt>Operations</dt><dd>Docker Compose on a single VPS · Prometheus · VictoriaLogs · Zipkin · Resilience4j</dd></div>
         </dl>
-        <p class="more">Roadmap: trustworthy research first, then domain capability packs starting with coding and finance, then a permissioned client-side agent.</p>
+        <p class="more">Next research steps: domain-specific capability packs, starting with coding and finance, and a permissioned client-side agent.</p>
         <div class="video-embed">
           <button type="button" class="yt-facade" data-yt="gVra057_hMk" data-title="LLM Council: The Anatomy of Trust" aria-label="Play video: LLM Council: The Anatomy of Trust">
             <img src="https://i.ytimg.com/vi/gVra057_hMk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
@@ -757,75 +751,13 @@ footer .mono { font-family: var(--font-mono); }
           </button>
         </div>
         <p class="more">Introduction video: <a href="https://youtu.be/gVra057_hMk" target="_blank" rel="noopener">LLM Council: The Anatomy of Trust</a> on YouTube</p>
-        <p class="more"><a href="https://llm.welllifeapp.com" target="_blank" rel="noopener">Open LLM Council</a></p>
+        <p class="more"><a href="https://llm.welllifeapp.com" target="_blank" rel="noopener">Open the research prototype</a></p>
       </div>
     </article>
   </section>
 
-  <!-- ================= WORK WITH ME ================= -->
-  <section id="work" aria-labelledby="work-h">
-    <div class="section-head">
-      <h2 id="work-h">Work with me</h2>
-      <p>Open to outsourcing projects</p>
-    </div>
-    <p class="work-lede">Besides my full-time role, I take on outsourcing projects through Well Life Solution for clients in the EU and the US. Pick the engagement model that fits how your team works.</p>
-    <div class="models">
-      <div class="model">
-        <p class="model-tag">Option A</p>
-        <h3>All-in-one project delivery</h3>
-        <p>End-to-end delivery with managed timelines, a fixed budget, milestone demos and post-launch support.</p>
-      </div>
-      <div class="model">
-        <p class="model-tag">Option B</p>
-        <h3>Dedicated outsourcing</h3>
-        <p>Developers who join your team on a flexible, time-based model and work under your leadership.</p>
-      </div>
-    </div>
-    <div class="work-grid">
-      <div>
-        <h3 class="sub">Industries</h3>
-        <dl class="ind">
-          <div><dt>Finance</dt><dd>Fintech apps and compliance-focused systems</dd></div>
-          <div><dt>Warehouse management</dt><dd>Inventory and logistics tools</dd></div>
-          <div><dt>Startups</dt><dd>MVPs and scalable cloud products</dd></div>
-          <div><dt>SMEs</dt><dd>Workflow automation, customer portals and custom tools</dd></div>
-        </dl>
-      </div>
-      <div>
-        <h3 class="sub">Technical expertise</h3>
-        <dl class="ind">
-          <div><dt>Back end</dt><dd>Java, Spring Boot, Spring Cloud, Java EE, microservices, REST APIs, Kafka</dd></div>
-          <div><dt>Front end</dt><dd>Angular, JavaScript, HTML/CSS</dd></div>
-          <div><dt>Cloud &amp; DevOps</dt><dd>AWS, Azure, Docker</dd></div>
-          <div><dt>Data &amp; integration</dt><dd>SQL and NoSQL (PostgreSQL), enterprise service bus, single sign-on, legacy migration</dd></div>
-          <div><dt>AI</dt><dd>Multi-model LLM integration (OpenAI, Gemini, local models)</dd></div>
-        </dl>
-      </div>
-    </div>
-    <h3 class="sub">Working principles</h3>
-    <ul class="values"><li>Experienced engineers</li><li>Close client collaboration</li><li>Quality assurance and secure development</li><li>Agile delivery</li><li>Support across the full lifecycle</li></ul>
-    <div class="cta">
-      <div>
-        <h3>Have a project in mind?</h3>
-        <p>Send a short description of what you need, your timeline and the engagement model you prefer.</p>
-      </div>
-      <div class="cta-contact">
-        <div class="contact-item">
-          <span class="k">Email</span>
-          <span class="v" id="cta-email">hungnguyendong0812@gmail.com</span>
-          <button class="copy" type="button" data-copy="cta-email" aria-label="Copy email address">Copy</button>
-        </div>
-        <div class="contact-item">
-          <span class="k">LinkedIn</span>
-          <span class="v"><a href="https://www.linkedin.com/in/hungnguyend/" target="_blank" rel="noopener">linkedin.com/in/hungnguyend</a></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <p>References available on request. Interests: reading, music, photography.</p>
-    <p>Well Life Solution · <a href="https://welllifeapp.com">welllifeapp.com</a></p>
     <p class="mono">Updated October 2026</p>
   </footer>
 </main>
